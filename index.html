@@ -21,6 +21,23 @@
       background: #0033cc;
       padding: 40px 20px;
       min-height: 100vh;
+      transition: background 0.3s ease;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    body.dark-mode {
+      background: #0a0a0a;
+    }
+
+    body.dark-mode.has-bg-image {
+      background-color: #0a0a0a;
+    }
+
+    body.has-bg-image {
+      background-color: #0033cc;
     }
 
     .card {
@@ -31,6 +48,11 @@
       border-radius: 20px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
+    }
+
+    body.dark-mode .card {
+      background: #1a1a1a;
+      color: #e0e0e0;
     }
 
     .card:hover {
@@ -51,6 +73,11 @@
       margin: 0;
       font-size: 32px;
       color: #0033cc;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode h2 {
+      color: #4a9eff;
     }
 
     .input-group {
@@ -256,6 +283,25 @@
       box-shadow: 0 6px 15px rgba(255, 214, 0, 0.3);
     }
 
+    .btn-edit {
+      background: #4a9eff;
+      padding: 8px 12px;
+      font-size: 12px;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      margin-right: 5px;
+    }
+
+    .btn-edit:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(74, 158, 255, 0.3);
+    }
+
     canvas {
       max-width: 100%;
       display: block !important;
@@ -273,6 +319,412 @@
       margin-top: 40px;
       margin-bottom: 20px;
       letter-spacing: -0.5px;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .section-title {
+      color: #4a9eff;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    body.dark-mode .search-box input {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-color: #444;
+    }
+
+    .stats-extras {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stat-card-extra {
+      background: #f0f5ff;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 51, 204, 0.08);
+    }
+
+    body.dark-mode .stat-card-extra {
+      background: #2a2a2a;
+    }
+
+    .stat-card-extra p {
+      font-size: 12px;
+      margin: 0 0 8px 0;
+      opacity: 0.8;
+    }
+
+    .stat-card-extra strong {
+      font-size: 20px;
+      display: block;
+      font-weight: 700;
+      color: #0033cc;
+    }
+
+    body.dark-mode .stat-card-extra strong {
+      color: #4a9eff;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .modal-content {
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+
+    body.dark-mode .modal-content h3,
+    body.dark-mode .modal-content h4 {
+      color: #4a9eff;
+    }
+
+    .modal-content h4 {
+      color: #0033cc;
+      transition: color 0.3s ease;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    body.dark-mode input {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-color: #444;
+    }
+
+    body.dark-mode table {
+      color: #e0e0e0;
+    }
+
+    body.dark-mode tbody tr:hover {
+      background: #2a2a2a;
+    }
+
+    body.dark-mode .mes-titulo {
+      background: #4a9eff;
+    }
+
+    body.dark-mode thead {
+      background: #4a9eff;
+    }
+
+    body.dark-mode .bar-container {
+      background: #2a2a2a;
+    }
+
+    body.dark-mode .grafico-container {
+      background: rgba(74, 158, 255, 0.05);
+      border-color: rgba(74, 158, 255, 0.2);
+    }
+
+    body.dark-mode .grafico-titulo {
+      color: #4a9eff;
+    }
+
+    /* Toast Notifications */
+    .toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .toast {
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      animation: slideIn 0.3s ease;
+      border-left: 4px solid #0033cc;
+    }
+
+    body.dark-mode .toast {
+      background: #2a2a2a;
+      color: #e0e0e0;
+      border-left-color: #4a9eff;
+    }
+
+    .toast.success {
+      border-left-color: #28a745;
+    }
+
+    .toast.error {
+      border-left-color: #dc3545;
+    }
+
+    .toast.warning {
+      border-left-color: #ffc107;
+    }
+
+    .toast.info {
+      border-left-color: #17a2b8;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+    }
+
+    .toast.hiding {
+      animation: slideOut 0.3s ease forwards;
+    }
+
+    .toast-icon {
+      font-size: 24px;
+    }
+
+    .toast-content {
+      flex: 1;
+    }
+
+    .toast-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body.dark-mode .toast-close {
+      color: #aaa;
+    }
+
+    /* Previsão de Meta */
+    .previsao-meta {
+      background: #0033cc;
+      color: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    body.dark-mode .previsao-meta {
+      background: #0033cc;
+    }
+
+    .previsao-meta h4 {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+    }
+
+    .previsao-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .previsao-item:last-child {
+      border-bottom: none;
+    }
+
+    .previsao-item strong {
+      font-size: 20px;
+    }
+
+    /* Virtualização da Tabela */
+    .tabela-wrapper {
+      max-height: 600px;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .tabela-wrapper::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .tabela-wrapper::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    body.dark-mode .tabela-wrapper::-webkit-scrollbar-track {
+      background: #2a2a2a;
+    }
+
+    .tabela-wrapper::-webkit-scrollbar-thumb {
+      background: #0033cc;
+      border-radius: 10px;
+    }
+
+    body.dark-mode .tabela-wrapper::-webkit-scrollbar-thumb {
+      background: #4a9eff;
+    }
+
+    /* Modal de Novidades */
+    .modal-novidades {
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .modal-novidades .modal-content {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .novidades-header {
+      background: linear-gradient(135deg, #0033cc 0%, #0066ff 100%);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    body.dark-mode .novidades-header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    }
+
+    .novidades-header h3 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+
+    .novidades-body {
+      padding: 25px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .novidade-item {
+      padding: 15px;
+      margin-bottom: 15px;
+      background: #f8f9fa;
+      border-radius: 10px;
+      border-left: 4px solid #0033cc;
+    }
+
+    body.dark-mode .novidade-item {
+      background: #2a2a2a;
+      border-left-color: #4a9eff;
+    }
+
+    .novidade-item h4 {
+      margin: 0 0 8px 0;
+      color: #0033cc;
+      font-size: 16px;
+    }
+
+    body.dark-mode .novidade-item h4 {
+      color: #4a9eff;
+    }
+
+    .novidade-item p {
+      margin: 0;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    body.dark-mode .novidade-item p {
+      color: #aaa;
+    }
+
+    .novidades-footer {
+      padding: 20px 25px;
+      background: #f8f9fa;
+      border-top: 1px solid #e0e0e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    body.dark-mode .novidades-footer {
+      background: #2a2a2a;
+      border-top-color: #444;
+    }
+
+    .checkbox-novidades {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #666;
+    }
+
+    body.dark-mode .checkbox-novidades {
+      color: #aaa;
+    }
+
+    .checkbox-novidades input[type="checkbox"] {
+      width: auto;
+      cursor: pointer;
     }
 
     .progresso-container {
@@ -316,6 +768,11 @@
       box-shadow: 0 4px 12px rgba(0, 51, 204, 0.08);
       margin-top: 0;
       margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .grafico-container.escondido {
+      display: none;
     }
 
     .grafico-titulo {
@@ -485,11 +942,16 @@
 
 <body>
 
+  <div class="toast-container" id="toastContainer"></div>
+
   <div class="card">
 
     <div class="header">
       <h2>CONTROLE DE METAS</h2>
-      <button onclick="resetar()" style="background: #0a0a0a;">🗑️ Limpar Dados</button>
+      <div style="display: flex; gap: 10px;">
+        <button onclick="abrirConfig()" style="background: #666;">⚙️ Config</button>
+        <button onclick="resetar()" style="background: #0a0a0a;">🗑️ Limpar Dados</button>
+      </div>
     </div>
 
     <div class="section-title">📥 Adicionar Venda</div>
@@ -528,6 +990,35 @@
         <strong id="faltam">R$ 0,00</strong>
       </div>
     </div>
+    <div class="stats-extras">
+      <div class="stat-card-extra">
+        <p>📊 Média Diária</p>
+        <strong id="mediaDiaria">R$ 0,00</strong>
+      </div>
+      <div class="stat-card-extra">
+        <p>📅 Dias Trabalhados</p>
+        <strong id="diasTrabalhados">0</strong>
+      </div>
+      <div class="stat-card-extra">
+        <p>⭐ Melhor Dia</p>
+        <strong id="melhorDia">-</strong>
+      </div>
+      <div class="stat-card-extra">
+        <p>📉 Menor Dia</p>
+        <strong id="menorDia">-</strong>
+      </div>
+    </div>
+    <div class="previsao-meta" id="previsaoMeta">
+      <h4>🎯 Previsão para Bater a Meta</h4>
+      <div class="previsao-item">
+        <span>Dias Restantes no Mês:</span>
+        <strong id="diasRestantes">0</strong>
+      </div>
+      <div class="previsao-item">
+        <span>Valor Necessário por Dia:</span>
+        <strong id="valorPorDia">R$ 0,00</strong>
+      </div>
+    </div>
 
     <div class="progresso-container">
       <p class="progresso-texto">Progresso</p>
@@ -537,26 +1028,134 @@
     </div>
 
     <div class="content-wrapper">
-      <div class="grafico-container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <p class="grafico-titulo" style="margin: 0;">📈 Gráficos</p>
+        <button onclick="toggleGraficos()" id="btnToggleGraficos" style="background: #666; padding: 8px 16px; font-size: 12px;">👁️ Esconder</button>
+      </div>
+      <div class="grafico-container" id="graficoContainer">
         <p class="grafico-titulo">📈 Vendas do Mês</p>
         <canvas id="grafico" height="150"></canvas>
+        <p class="grafico-titulo">📊 Comparação Últimos 30 Dias</p>
+        <canvas id="graficoComparativo" height="150"></canvas>
       </div>
     </div>
 
     <div class="section-title">📋 Registros de Vendas</div>
-    
-    <table>
-      <thead>
-        <tr>
-          <th>Data</th>
-          <th>Valor</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="tabela"></tbody>
-    </table>
+    <div class="search-box">
+      <input type="text" id="busca" placeholder="🔍 Buscar por data ou valor..." onkeyup="filtrarTabela()">
+    </div>
+    <div class="tabela-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="tabela"></tbody>
+      </table>
+    </div>
 
   </div>
+
+  <!-- Modal para Editar Venda -->
+  <div id="modalEditar" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="margin: 0; color: #0033cc;">✏️ Editar Venda</h3>
+        <button class="close-modal" onclick="fecharModal()">&times;</button>
+      </div>
+      <div class="input-group" style="flex-direction: column; gap: 15px;">
+        <input type="date" id="editarData">
+        <input type="number" id="editarValor" placeholder="Valor">
+        <div style="display: flex; gap: 10px;">
+          <button onclick="salvarEdicao()" style="flex: 1;">Salvar</button>
+          <button onclick="fecharModal()" style="flex: 1; background: #666;">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Novidades -->
+  <div id="modalNovidades" class="modal">
+    <div class="modal-content modal-novidades">
+      <div class="novidades-header">
+        <h3>🎉 Novidades!</h3>
+        <p style="margin: 10px 0 0 0; opacity: 0.9;">Confira as últimas atualizações</p>
+      </div>
+      <div class="novidades-body">
+        <div class="novidade-item">
+          <h4>✨ Exportar Gráficos</h4>
+          <p>Agora você pode exportar seus gráficos como imagens PNG diretamente nas configurações!</p>
+        </div>
+        <div class="novidade-item">
+          <h4>📊 Previsão de Meta</h4>
+          <p>Veja quantos dias restam e quanto você precisa vender por dia para bater sua meta!</p>
+        </div>
+        <div class="novidade-item">
+          <h4>🔔 Notificações Toast</h4>
+          <p>Sistema de notificações moderno e elegante para todas as ações do sistema.</p>
+        </div>
+        <div class="novidade-item">
+          <h4>🔄 Detecção de Duplicatas</h4>
+          <p>O sistema agora detecta vendas na mesma data e permite somar ou substituir valores.</p>
+        </div>
+        <div class="novidade-item">
+          <h4>🌙 Modo Escuro</h4>
+          <p>Interface com tema escuro para maior conforto visual durante a noite.</p>
+        </div>
+        <div class="novidade-item">
+          <h4>🖼️ Imagem de Fundo Personalizada</h4>
+          <p>Personalize o fundo da aplicação com sua própria imagem!</p>
+        </div>
+      </div>
+      <div class="novidades-footer">
+        <label class="checkbox-novidades">
+          <input type="checkbox" id="naoMostrarNovidades">
+          <span>Não mostrar novamente</span>
+        </label>
+        <button onclick="fecharNovidades()" style="background: #0033cc;">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Configurações -->
+  <div id="modalConfig" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="margin: 0; color: #0033cc;">⚙️ Configurações</h3>
+        <button class="close-modal" onclick="fecharModalConfig()">&times;</button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div>
+          <h4 style="margin: 0 0 15px 0; color: #0033cc;">🎨 Aparência</h4>
+          <div class="input-group" style="flex-direction: column; gap: 10px;">
+            <button onclick="toggleDarkMode(); fecharModalConfig();" id="btnDarkModeModal" style="background: #666; width: 100%;">🌙 Modo Escuro</button>
+            <button onclick="document.getElementById('bgImageInput').click()" style="background: #9c27b0; width: 100%;">🖼️ Escolher Imagem de Fundo</button>
+            <button onclick="removerImagemFundo(); fecharModalConfig();" style="background: #f44336; width: 100%;">🗑️ Remover Imagem</button>
+            <input type="file" id="bgImageInput" accept="image/*" style="display: none;" onchange="aplicarImagemFundo(event)">
+          </div>
+        </div>
+        <div>
+          <h4 style="margin: 0 0 15px 0; color: #0033cc;">💾 Dados</h4>
+          <div class="input-group" style="flex-direction: column; gap: 10px;">
+            <button onclick="exportarDados(); fecharModalConfig();" style="background: #28a745; width: 100%;">💾 Exportar Dados</button>
+            <button onclick="document.getElementById('importarInput').click()" style="background: #17a2b8; width: 100%;">📥 Importar Dados</button>
+            <input type="file" id="importarInput" accept=".json,.csv" style="display: none;" onchange="importarDados(event)">
+          </div>
+        </div>
+        <div>
+          <h4 style="margin: 0 0 15px 0; color: #0033cc;">📊 Gráficos</h4>
+          <div class="input-group" style="flex-direction: column; gap: 10px;">
+            <button onclick="exportarGrafico('grafico'); fecharModalConfig();" style="background: #e91e63; width: 100%;">📈 Exportar Gráfico de Vendas (PNG)</button>
+            <button onclick="exportarGrafico('graficoComparativo'); fecharModalConfig();" style="background: #9c27b0; width: 100%;">📊 Exportar Gráfico Comparativo (PNG)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script>
 
@@ -571,6 +1170,33 @@
     document.getElementById("meta").value = metaMensal;
 
     let metaAtingida = false;
+
+    // Sistema de Notificações Toast
+    function showToast(message, type = "info", duration = 3000) {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = `toast ${type}`;
+      
+      const icons = {
+        success: "✅",
+        error: "❌",
+        warning: "⚠️",
+        info: "ℹ️"
+      };
+      
+      toast.innerHTML = `
+        <span class="toast-icon">${icons[type] || icons.info}</span>
+        <div class="toast-content">${message}</div>
+        <button class="toast-close" onclick="this.parentElement.remove()">&times;</button>
+      `;
+      
+      container.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.classList.add("hiding");
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
 
     function salvar() {
       localStorage.setItem("vendas", JSON.stringify(vendas));
@@ -607,11 +1233,49 @@
       const valor = Number(document.getElementById("valor").value);
 
       if (!data || !valor) {
-        alert("Preencha data e valor!");
+        showToast("Preencha data e valor!", "error");
         return;
       }
 
-      vendas.push({ data, valor });
+      // Validar data futura
+      const dataVenda = new Date(data);
+      const hoje = new Date();
+      hoje.setHours(23, 59, 59, 999);
+      
+      if (dataVenda > hoje) {
+        showToast("Não é possível adicionar vendas com data futura!", "error");
+        return;
+      }
+
+      // Validar valor negativo ou zero
+      if (valor <= 0) {
+        showToast("O valor deve ser maior que zero!", "error");
+        return;
+      }
+
+      // Verificar duplicação
+      const vendaExistente = vendas.find(v => v.data === data);
+      if (vendaExistente) {
+        const opcao = confirm(`Já existe uma venda em ${data} no valor de R$ ${vendaExistente.valor.toLocaleString()}.\n\nDeseja:\n- OK: Somar os valores\n- Cancelar: Substituir o valor anterior`);
+        
+        if (opcao) {
+          // Somar valores
+          vendaExistente.valor += valor;
+          showToast(`Valor somado! Nova venda em ${data}: R$ ${vendaExistente.valor.toLocaleString()}`, "success");
+        } else {
+          // Substituir
+          vendaExistente.valor = valor;
+          showToast(`Venda atualizada em ${data}: R$ ${valor.toLocaleString()}`, "success");
+        }
+      } else {
+        vendas.push({ data, valor });
+        showToast(`Venda adicionada: R$ ${valor.toLocaleString()}`, "success");
+      }
+
+      // Limpar campos
+      document.getElementById("data").value = "";
+      document.getElementById("valor").value = "";
+
       salvar();
       render();
     }
@@ -665,10 +1329,13 @@
             total += item.valor;
 
             tabela.innerHTML += `
-              <tr>
+              <tr class="linha-venda">
                 <td>${item.data}</td>
                 <td>R$ ${item.valor.toLocaleString()}</td>
-                <td><button class="btn-delete" onclick="excluir(${item.index})">Excluir</button></td>
+                <td>
+                  <button class="btn-edit" onclick="editar(${item.index})">Editar</button>
+                  <button class="btn-delete" onclick="excluir(${item.index})">Excluir</button>
+                </td>
               </tr>
             `;
           });
@@ -692,6 +1359,147 @@
       }
 
       grafico(labels, valores);
+
+      // Cálculo dos dados para comparação dos últimos 30 dias
+      let hoje = new Date();
+      let labelsComparacao = [];
+      let periodoAtual = [];
+      let periodoAnterior = [];
+
+      for (let i = 29; i >= 0; i--) {
+        let d = new Date(hoje);
+        d.setDate(d.getDate() - i);
+
+        let dataStr = d.toISOString().split("T")[0];
+        labelsComparacao.push(dataStr);
+
+        let totalDiaAtual = vendas.filter(v => v.data === dataStr)
+          .reduce((s, i) => s + i.valor, 0);
+
+        let dataAnterior = new Date(d);
+        dataAnterior.setDate(dataAnterior.getDate() - 30);
+        let dataAnteriorStr = dataAnterior.toISOString().split("T")[0];
+
+        let totalDiaAnterior = vendas.filter(v => v.data === dataAnteriorStr)
+          .reduce((s, i) => s + i.valor, 0);
+
+        periodoAtual.push(totalDiaAtual);
+        periodoAnterior.push(totalDiaAnterior);
+      }
+
+      graficoComparacao(labelsComparacao, periodoAnterior, periodoAtual);
+
+      // Calcular estatísticas adicionais
+      calcularEstatisticas();
+      
+      // Calcular previsão de meta
+      calcularPrevisaoMeta(total);
+    }
+
+    function calcularEstatisticas() {
+      if (vendas.length === 0) {
+        document.getElementById("mediaDiaria").innerText = "R$ 0,00";
+        document.getElementById("diasTrabalhados").innerText = "0";
+        document.getElementById("melhorDia").innerText = "-";
+        document.getElementById("menorDia").innerText = "-";
+        return;
+      }
+
+      let total = vendas.reduce((s, v) => s + v.valor, 0);
+      let diasUnicos = new Set(vendas.map(v => v.data)).size;
+      let mediaDiaria = total / diasUnicos;
+
+      let melhorVenda = vendas.reduce((max, v) => v.valor > max.valor ? v : max, vendas[0]);
+      let menorVenda = vendas.reduce((min, v) => v.valor < min.valor ? v : min, vendas[0]);
+
+      document.getElementById("mediaDiaria").innerText = "R$ " + Math.round(mediaDiaria).toLocaleString();
+      document.getElementById("diasTrabalhados").innerText = diasUnicos;
+      document.getElementById("melhorDia").innerText = melhorVenda.data + " - R$ " + melhorVenda.valor.toLocaleString();
+      document.getElementById("menorDia").innerText = menorVenda.data + " - R$ " + menorVenda.valor.toLocaleString();
+      
+      // Calcular previsão de meta
+      calcularPrevisaoMeta(total);
+    }
+
+    function calcularPrevisaoMeta(totalAtual) {
+      const hoje = new Date();
+      const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0);
+      const diasRestantes = ultimoDiaMes.getDate() - hoje.getDate() + 1;
+      
+      const faltam = metaMensal - totalAtual;
+      
+      if (faltam <= 0) {
+        document.getElementById("previsaoMeta").style.display = "none";
+        return;
+      }
+      
+      document.getElementById("previsaoMeta").style.display = "block";
+      
+      // Valor necessário por dia nos dias restantes
+      const valorPorDia = diasRestantes > 0 ? faltam / diasRestantes : 0;
+      
+      document.getElementById("diasRestantes").innerText = diasRestantes;
+      document.getElementById("valorPorDia").innerText = "R$ " + Math.round(valorPorDia).toLocaleString();
+    }
+
+    function exportarGrafico(idCanvas) {
+      const canvas = document.getElementById(idCanvas);
+      if (!canvas) {
+        showToast("Gráfico não encontrado!", "error");
+        return;
+      }
+
+      const nomeArquivo = idCanvas === "grafico" ? "grafico-vendas" : "grafico-comparativo";
+      const url = canvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.download = `${nomeArquivo}-${new Date().toISOString().split("T")[0]}.png`;
+      link.href = url;
+      link.click();
+      showToast("Gráfico exportado com sucesso!", "success");
+    }
+
+    let indiceEditando = null;
+
+    function editar(index) {
+      indiceEditando = index;
+      const venda = vendas[index];
+      document.getElementById("editarData").value = venda.data;
+      document.getElementById("editarValor").value = venda.valor;
+      document.getElementById("modalEditar").style.display = "flex";
+    }
+
+    function fecharModal() {
+      document.getElementById("modalEditar").style.display = "none";
+      indiceEditando = null;
+    }
+
+    function abrirConfig() {
+      document.getElementById("modalConfig").style.display = "flex";
+      // Atualizar texto do botão de modo escuro no modal
+      const isDark = document.body.classList.contains("dark-mode");
+      document.getElementById("btnDarkModeModal").innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+    }
+
+    function fecharModalConfig() {
+      document.getElementById("modalConfig").style.display = "none";
+    }
+
+    function salvarEdicao() {
+      const data = document.getElementById("editarData").value;
+      const valor = Number(document.getElementById("editarValor").value);
+
+      if (!data || !valor) {
+        showToast("Preencha data e valor!", "error");
+        return;
+      }
+
+      if (indiceEditando !== null) {
+        vendas[indiceEditando] = { data, valor };
+        salvar();
+        render();
+        showToast("Venda atualizada com sucesso!", "success");
+        fecharModal();
+      }
     }
 
     function excluir(index) {
@@ -701,11 +1509,117 @@
       render();
     }
 
+    function filtrarTabela() {
+      const busca = document.getElementById("busca").value.toLowerCase();
+      const linhas = document.querySelectorAll(".linha-venda");
+
+      linhas.forEach(linha => {
+        const texto = linha.textContent.toLowerCase();
+        linha.style.display = texto.includes(busca) ? "" : "none";
+      });
+    }
+
+    function exportarDados() {
+      const dados = {
+        vendas: vendas,
+        meta: metaMensal,
+        dataExportacao: new Date().toISOString()
+      };
+
+      // Exportar JSON
+      const jsonStr = JSON.stringify(dados, null, 2);
+      const blob = new Blob([jsonStr], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `backup-vendas-${new Date().toISOString().split("T")[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+
+      // Exportar CSV também
+      let csv = "Data,Valor\n";
+      vendas.forEach(v => {
+        csv += `${v.data},${v.valor}\n`;
+      });
+      const csvBlob = new Blob([csv], { type: "text/csv" });
+      const csvUrl = URL.createObjectURL(csvBlob);
+      const csvA = document.createElement("a");
+      csvA.href = csvUrl;
+      csvA.download = `vendas-${new Date().toISOString().split("T")[0]}.csv`;
+      csvA.click();
+      URL.revokeObjectURL(csvUrl);
+
+      showToast("Dados exportados com sucesso!", "success");
+    }
+
+    function importarDados(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          if (file.name.endsWith(".json")) {
+            const dados = JSON.parse(e.target.result);
+            if (dados.vendas && Array.isArray(dados.vendas)) {
+              if (confirm("Isso irá substituir todos os dados atuais. Continuar?")) {
+                vendas = dados.vendas;
+                if (dados.meta) metaMensal = dados.meta;
+                salvar();
+                render();
+                showToast("Dados importados com sucesso!", "success");
+                fecharModalConfig();
+              }
+            } else {
+              showToast("Arquivo JSON inválido!", "error");
+            }
+          } else if (file.name.endsWith(".csv")) {
+            const texto = e.target.result;
+            const linhas = texto.split("\n").slice(1).filter(l => l.trim());
+            const novasVendas = [];
+            
+            linhas.forEach(linha => {
+              const [data, valor] = linha.split(",");
+              if (data && valor) {
+                novasVendas.push({ data: data.trim(), valor: Number(valor.trim()) });
+              }
+            });
+
+            if (novasVendas.length > 0) {
+              if (confirm(`Importar ${novasVendas.length} vendas? Isso irá adicionar aos dados existentes.`)) {
+                vendas = vendas.concat(novasVendas);
+                salvar();
+                render();
+                showToast("Dados importados com sucesso!", "success");
+                fecharModalConfig();
+              }
+            } else {
+              showToast("Nenhum dado válido encontrado no CSV!", "warning");
+            }
+          }
+        } catch (error) {
+          showToast("Erro ao importar arquivo: " + error.message, "error");
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = "";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      const isDark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDark);
+      const btnModal = document.getElementById("btnDarkModeModal");
+      if (btnModal) {
+        btnModal.innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+      }
+    }
+
     function limparMes() {
       const data = document.getElementById("dataLimpeza").value;
       
       if (!data) {
-        alert("Selecione uma data para limpar o mês!");
+        showToast("Selecione uma data para limpar o mês!", "warning");
         return;
       }
 
@@ -729,6 +1643,61 @@
 
 
     let chart;
+    let chartComparativo;
+    let graficosVisiveis = localStorage.getItem("graficosVisiveis") !== "false";
+
+    function toggleGraficos() {
+      const container = document.getElementById("graficoContainer");
+      const btn = document.getElementById("btnToggleGraficos");
+      
+      graficosVisiveis = !graficosVisiveis;
+      
+      if (graficosVisiveis) {
+        container.classList.remove("escondido");
+        btn.innerText = "👁️ Esconder";
+      } else {
+        container.classList.add("escondido");
+        btn.innerText = "👁️ Mostrar";
+      }
+      
+      localStorage.setItem("graficosVisiveis", graficosVisiveis);
+    }
+
+    function graficoComparacao(labels, anterior, atual) {
+      const ctx = document.getElementById("graficoComparativo");
+
+      if (chartComparativo) {
+        chartComparativo.destroy();
+      }
+
+      chartComparativo = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Período Anterior",
+              data: anterior,
+              backgroundColor: "rgba(0, 200, 83, 0.3)",
+              borderColor: "rgba(0, 200, 83, 1)",
+              borderWidth: 1
+            },
+            {
+              label: "Período Atual",
+              data: atual,
+              backgroundColor: "rgba(76, 175, 80, 0.5)",
+              borderColor: "rgba(76, 175, 80, 1)",
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { display: true } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    }
 
     function grafico(labels, data) {
 
@@ -761,7 +1730,94 @@
     }
 
 
+    // Aplicar estado inicial dos gráficos
+    if (!graficosVisiveis) {
+      const container = document.getElementById("graficoContainer");
+      const btn = document.getElementById("btnToggleGraficos");
+      container.classList.add("escondido");
+      btn.innerText = "👁️ Mostrar";
+    }
+
+    // Aplicar modo escuro se estava ativo
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark-mode");
+    }
+
+    // Aplicar imagem de fundo se existir
+    const bgImage = localStorage.getItem("bgImage");
+    if (bgImage) {
+      document.body.style.backgroundImage = `url(${bgImage})`;
+      document.body.classList.add("has-bg-image");
+    }
+
+    function aplicarImagemFundo(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      if (!file.type.startsWith("image/")) {
+        showToast("Por favor, selecione um arquivo de imagem!", "error");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imageUrl = e.target.result;
+        localStorage.setItem("bgImage", imageUrl);
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+        document.body.classList.add("has-bg-image");
+        showToast("Imagem de fundo aplicada com sucesso!", "success");
+        fecharModalConfig();
+      };
+      reader.readAsDataURL(file);
+      event.target.value = "";
+    }
+
+    function removerImagemFundo() {
+      if (confirm("Tem certeza que deseja remover a imagem de fundo?")) {
+        localStorage.removeItem("bgImage");
+        document.body.style.backgroundImage = "";
+        document.body.classList.remove("has-bg-image");
+        showToast("Imagem de fundo removida!", "success");
+      }
+    }
+
+    function fecharNovidades() {
+      const naoMostrar = document.getElementById("naoMostrarNovidades").checked;
+      if (naoMostrar) {
+        localStorage.setItem("novidadesMostradas", "true");
+      }
+      document.getElementById("modalNovidades").style.display = "none";
+    }
+
+    function mostrarNovidades() {
+      const novidadesMostradas = localStorage.getItem("novidadesMostradas");
+      if (!novidadesMostradas) {
+        setTimeout(() => {
+          document.getElementById("modalNovidades").style.display = "flex";
+        }, 500); // Pequeno delay para melhor UX
+      }
+    }
+
+    // Fechar modal ao clicar fora
+    window.onclick = function(event) {
+      const modalEditar = document.getElementById("modalEditar");
+      const modalConfig = document.getElementById("modalConfig");
+      const modalNovidades = document.getElementById("modalNovidades");
+      if (event.target === modalEditar) {
+        fecharModal();
+      }
+      if (event.target === modalConfig) {
+        fecharModalConfig();
+      }
+      if (event.target === modalNovidades) {
+        fecharNovidades();
+      }
+    }
+
     render();
+    
+    // Mostrar novidades na primeira vez
+    mostrarNovidades();
   </script>
 
 </body>
