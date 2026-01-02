@@ -1,4 +1,4 @@
-# Controle de Metas 💰🎯 (v2.0.0)
+# Controle de Metas 💰🎯 (v2.5.1)
 
 Aplicação em HTML/CSS/JS para registrar vendas diárias, acompanhar meta mensal, visualizar gráficos e **sincronizar dados com Firebase** (login + Firestore).
 
