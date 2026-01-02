@@ -2088,6 +2088,19 @@
 
         // Novidades
         mostrarNovidades();
+
+
+
+        window.addEventListener("load", () => {
+            const busca = document.getElementById("busca");
+            if (busca) {
+                busca.value = "";
+                busca.setAttribute("value", "");
+            }
+        });
+
+        document.getElementById("busca").value = "";
+
     </script>
 
 </body>
