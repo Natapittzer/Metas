@@ -18,11 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: "Poppins", sans-serif;
@@ -36,17 +32,9 @@
             background-attachment: fixed;
         }
 
-        body.dark-mode {
-            background: #0a0a0a;
-        }
-
-        body.dark-mode.has-bg-image {
-            background-color: #0a0a0a;
-        }
-
-        body.has-bg-image {
-            background-color: #0033cc;
-        }
+        body.dark-mode { background: #0a0a0a; }
+        body.dark-mode.has-bg-image { background-color: #0a0a0a; }
+        body.has-bg-image { background-color: #0033cc; }
 
         .card {
             background: #fff;
@@ -58,10 +46,7 @@
             transition: all .3s ease;
         }
 
-        body.dark-mode .card {
-            background: #1a1a1a;
-            color: #e0e0e0;
-        }
+        body.dark-mode .card { background: #1a1a1a; color: #e0e0e0; }
 
         .card:hover {
             transform: translateY(-3px);
@@ -84,9 +69,7 @@
             transition: color .3s ease;
         }
 
-        body.dark-mode h2 {
-            color: #4a9eff;
-        }
+        body.dark-mode h2 { color: #4a9eff; }
 
         .input-group {
             display: flex;
@@ -95,8 +78,7 @@
             align-items: center;
         }
 
-        input,
-        select {
+        input, select {
             padding: 12px 16px;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
@@ -106,15 +88,13 @@
             background: #fff;
         }
 
-        body.dark-mode input,
-        body.dark-mode select {
+        body.dark-mode input, body.dark-mode select {
             background: #2a2a2a;
             color: #e0e0e0;
             border-color: #444;
         }
 
-        input:focus,
-        select:focus {
+        input:focus, select:focus {
             outline: none;
             border-color: #0033cc;
             box-shadow: 0 0 0 3px rgba(0, 51, 204, .1);
@@ -138,9 +118,7 @@
             box-shadow: 0 10px 20px rgba(0, 51, 204, .3);
         }
 
-        button:active {
-            transform: translateY(0);
-        }
+        button:active { transform: translateY(0); }
 
         .stats-container {
             display: grid;
@@ -163,43 +141,13 @@
             box-shadow: 0 12px 32px rgba(0, 51, 204, .15);
         }
 
-        .stat-card-icon {
-            font-size: 32px;
-            margin-bottom: 12px;
-            display: block;
-        }
+        .stat-card-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+        .stat-card p { font-size: 13px; margin: 0 0 8px 0; opacity: .8; letter-spacing: .5px; }
+        .stat-card strong { font-size: 32px; display: block; font-weight: 700; line-height: 1.2; }
 
-        .stat-card p {
-            font-size: 13px;
-            margin: 0 0 8px 0;
-            opacity: .8;
-            letter-spacing: .5px;
-        }
-
-        .stat-card strong {
-            font-size: 32px;
-            display: block;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .stat-card.total {
-            background: #0033cc;
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 51, 204, .15);
-        }
-
-        .stat-card.meta {
-            background: #ffd600;
-            color: #000;
-            box-shadow: 0 4px 12px rgba(255, 214, 0, .15);
-        }
-
-        .stat-card.faltam {
-            background: #0033cc;
-            color: #fff;
-            box-shadow: 0 4px 12px rgba(0, 51, 204, .15);
-        }
+        .stat-card.total { background: #0033cc; color: #fff; box-shadow: 0 4px 12px rgba(0, 51, 204, .15); }
+        .stat-card.meta { background: #ffd600; color: #000; box-shadow: 0 4px 12px rgba(255, 214, 0, .15); }
+        .stat-card.faltam { background: #0033cc; color: #fff; box-shadow: 0 4px 12px rgba(0, 51, 204, .15); }
 
         .bar-container {
             background: #e8e8e8;
@@ -212,9 +160,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
         }
 
-        body.dark-mode .bar-container {
-            background: #2a2a2a;
-        }
+        body.dark-mode .bar-container { background: #2a2a2a; }
 
         .bar {
             height: 100%;
@@ -229,13 +175,7 @@
             min-width: 50px;
         }
 
-        .bar::after {
-            content: attr(data-percentage);
-            color: #fff;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: .5px;
-        }
+        .bar::after { content: attr(data-percentage); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .5px; }
 
         .section-title {
             font-size: 20px;
@@ -247,17 +187,10 @@
             transition: color .3s ease;
         }
 
-        body.dark-mode .section-title {
-            color: #4a9eff;
-        }
+        body.dark-mode .section-title { color: #4a9eff; }
 
-        .search-box {
-            margin-bottom: 20px;
-        }
-
-        .search-box input {
-            width: 100%;
-        }
+        .search-box { margin-bottom: 20px; }
+        .search-box input { width: 100%; }
 
         .stats-extras {
             display: grid;
@@ -274,26 +207,10 @@
             box-shadow: 0 2px 8px rgba(0, 51, 204, .08);
         }
 
-        body.dark-mode .stat-card-extra {
-            background: #2a2a2a;
-        }
-
-        .stat-card-extra p {
-            font-size: 12px;
-            margin: 0 0 8px 0;
-            opacity: .8;
-        }
-
-        .stat-card-extra strong {
-            font-size: 20px;
-            display: block;
-            font-weight: 700;
-            color: #0033cc;
-        }
-
-        body.dark-mode .stat-card-extra strong {
-            color: #4a9eff;
-        }
+        body.dark-mode .stat-card-extra { background: #2a2a2a; }
+        .stat-card-extra p { font-size: 12px; margin: 0 0 8px 0; opacity: .8; }
+        .stat-card-extra strong { font-size: 20px; display: block; font-weight: 700; color: #0033cc; }
+        body.dark-mode .stat-card-extra strong { color: #4a9eff; }
 
         .previsao-meta {
             background: #0033cc;
@@ -304,10 +221,7 @@
             box-shadow: 0 4px 12px rgba(102, 126, 234, .3);
         }
 
-        .previsao-meta h4 {
-            margin: 0 0 15px 0;
-            font-size: 18px;
-        }
+        .previsao-meta h4 { margin: 0 0 15px 0; font-size: 18px; }
 
         .previsao-item {
             display: flex;
@@ -316,20 +230,10 @@
             border-bottom: 1px solid rgba(255, 255, 255, .2);
         }
 
-        .previsao-item:last-child {
-            border-bottom: none;
-        }
+        .previsao-item:last-child { border-bottom: none; }
+        .previsao-item strong { font-size: 20px; }
 
-        .previsao-item strong {
-            font-size: 20px;
-        }
-
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
+        .content-wrapper { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
 
         .grafico-container {
             background: rgba(0, 51, 204, .03);
@@ -341,83 +245,25 @@
             transition: all .3s ease;
         }
 
-        body.dark-mode .grafico-container {
-            background: rgba(74, 158, 255, .05);
-            border-color: rgba(74, 158, 255, .2);
-        }
+        body.dark-mode .grafico-container { background: rgba(74, 158, 255, .05); border-color: rgba(74, 158, 255, .2); }
+        .grafico-container.escondido { display: none; }
 
-        .grafico-container.escondido {
-            display: none;
-        }
+        .grafico-titulo { font-size: 18px; font-weight: 700; color: #0033cc; margin-bottom: 25px; text-align: left; }
+        body.dark-mode .grafico-titulo { color: #4a9eff; }
 
-        .grafico-titulo {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0033cc;
-            margin-bottom: 25px;
-            text-align: left;
-        }
+        canvas { max-width: 100%; display: block !important; margin-top: 30px; padding: 20px 0; }
 
-        body.dark-mode .grafico-titulo {
-            color: #4a9eff;
-        }
+        table { width: 100%; margin-top: 40px; border-collapse: collapse; font-size: 14px; }
+        thead { background: #0033cc; color: #fff; }
+        body.dark-mode thead { background: #4a9eff; }
+        th { padding: 16px; text-align: center; font-weight: 600; }
+        td { padding: 14px 16px; text-align: center; border-bottom: 1px solid #e0e0e0; }
 
-        canvas {
-            max-width: 100%;
-            display: block !important;
-            margin-top: 30px;
-            padding: 20px 0;
-        }
+        tbody tr:hover { background: #f0f5ff; transition: background .2s ease; }
+        body.dark-mode tbody tr:hover { background: #2a2a2a; }
 
-        table {
-            width: 100%;
-            margin-top: 40px;
-            border-collapse: collapse;
-            font-size: 14px;
-        }
-
-        thead {
-            background: #0033cc;
-            color: #fff;
-        }
-
-        body.dark-mode thead {
-            background: #4a9eff;
-        }
-
-        th {
-            padding: 16px;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        td {
-            padding: 14px 16px;
-            text-align: center;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        tbody tr:hover {
-            background: #f0f5ff;
-            transition: background .2s ease;
-        }
-
-        body.dark-mode tbody tr:hover {
-            background: #2a2a2a;
-        }
-
-        .mes-titulo {
-            background: #0033cc;
-            color: #fff;
-            padding: 14px 16px;
-            font-weight: 700;
-            text-align: left;
-            font-size: 16px;
-        }
-
-        body.dark-mode .mes-titulo {
-            background: #4a9eff;
-        }
+        .mes-titulo { background: #0033cc; color: #fff; padding: 14px 16px; font-weight: 700; text-align: left; font-size: 16px; }
+        body.dark-mode .mes-titulo { background: #4a9eff; }
 
         .btn-delete {
             background: #ffd600;
@@ -468,63 +314,23 @@
             border-left: 4px solid #0033cc;
         }
 
-        body.dark-mode .toast {
-            background: #2a2a2a;
-            color: #e0e0e0;
-            border-left-color: #4a9eff;
-        }
-
-        .toast.success {
-            border-left-color: #28a745;
-        }
-
-        .toast.error {
-            border-left-color: #dc3545;
-        }
-
-        .toast.warning {
-            border-left-color: #ffc107;
-        }
-
-        .toast.info {
-            border-left-color: #17a2b8;
-        }
+        body.dark-mode .toast { background: #2a2a2a; color: #e0e0e0; border-left-color: #4a9eff; }
+        .toast.success { border-left-color: #28a745; }
+        .toast.error { border-left-color: #dc3545; }
+        .toast.warning { border-left-color: #ffc107; }
+        .toast.info { border-left-color: #17a2b8; }
 
         @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
-
         @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-
-            to {
-                transform: translateX(400px);
-                opacity: 0;
-            }
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(400px); opacity: 0; }
         }
-
-        .toast.hiding {
-            animation: slideOut .3s ease forwards;
-        }
-
-        .toast-icon {
-            font-size: 24px;
-        }
-
-        .toast-content {
-            flex: 1;
-        }
+        .toast.hiding { animation: slideOut .3s ease forwards; }
+        .toast-icon { font-size: 24px; }
+        .toast-content { flex: 1; }
 
         .toast-close {
             background: none;
@@ -539,10 +345,7 @@
             align-items: center;
             justify-content: center;
         }
-
-        body.dark-mode .toast-close {
-            color: #aaa;
-        }
+        body.dark-mode .toast-close { color: #aaa; }
 
         /* Modais */
         .modal {
@@ -567,10 +370,7 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
         }
 
-        body.dark-mode .modal-content {
-            background: #1a1a1a;
-            color: #e0e0e0;
-        }
+        body.dark-mode .modal-content { background: #1a1a1a; color: #e0e0e0; }
 
         .modal-header {
             display: flex;
@@ -579,53 +379,19 @@
             margin-bottom: 20px;
         }
 
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-        }
+        .close-modal { background: none; border: none; font-size: 24px; cursor: pointer; color: #666; }
 
         /* Wrapper tabela */
-        .tabela-wrapper {
-            max-height: 600px;
-            overflow-y: auto;
-            position: relative;
-        }
+        .tabela-wrapper { max-height: 600px; overflow-y: auto; position: relative; }
+        .tabela-wrapper::-webkit-scrollbar { width: 8px; }
+        .tabela-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        body.dark-mode .tabela-wrapper::-webkit-scrollbar-track { background: #2a2a2a; }
+        .tabela-wrapper::-webkit-scrollbar-thumb { background: #0033cc; border-radius: 10px; }
+        body.dark-mode .tabela-wrapper::-webkit-scrollbar-thumb { background: #4a9eff; }
 
-        .tabela-wrapper::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .tabela-wrapper::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        body.dark-mode .tabela-wrapper::-webkit-scrollbar-track {
-            background: #2a2a2a;
-        }
-
-        .tabela-wrapper::-webkit-scrollbar-thumb {
-            background: #0033cc;
-            border-radius: 10px;
-        }
-
-        body.dark-mode .tabela-wrapper::-webkit-scrollbar-thumb {
-            background: #4a9eff;
-        }
-
-        /* Modal novidades (mantido) */
-        .modal-novidades {
-            max-width: 600px;
-            width: 90%;
-        }
-
-        .modal-novidades .modal-content {
-            padding: 0;
-            overflow: hidden;
-        }
+        /* Modal novidades */
+        .modal-novidades { max-width: 600px; width: 90%; }
+        .modal-novidades .modal-content { padding: 0; overflow: hidden; }
 
         .novidades-header {
             background: linear-gradient(135deg, #0033cc 0%, #0066ff 100%);
@@ -634,21 +400,10 @@
             text-align: center;
         }
 
-        body.dark-mode .novidades-header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-        }
+        body.dark-mode .novidades-header { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); }
+        .novidades-header h3 { margin: 0; font-size: 24px; color: #fff; }
 
-        .novidades-header h3 {
-            margin: 0;
-            font-size: 24px;
-            color: #fff;
-        }
-
-        .novidades-body {
-            padding: 25px;
-            max-height: 400px;
-            overflow-y: auto;
-        }
+        .novidades-body { padding: 25px; max-height: 400px; overflow-y: auto; }
 
         .novidade-item {
             padding: 15px;
@@ -658,31 +413,12 @@
             border-left: 4px solid #0033cc;
         }
 
-        body.dark-mode .novidade-item {
-            background: #2a2a2a;
-            border-left-color: #4a9eff;
-        }
+        body.dark-mode .novidade-item { background: #2a2a2a; border-left-color: #4a9eff; }
 
-        .novidade-item h4 {
-            margin: 0 0 8px 0;
-            color: #0033cc;
-            font-size: 16px;
-        }
-
-        body.dark-mode .novidade-item h4 {
-            color: #4a9eff;
-        }
-
-        .novidade-item p {
-            margin: 0;
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        body.dark-mode .novidade-item p {
-            color: #aaa;
-        }
+        .novidade-item h4 { margin: 0 0 8px 0; color: #0033cc; font-size: 16px; }
+        body.dark-mode .novidade-item h4 { color: #4a9eff; }
+        .novidade-item p { margin: 0; color: #666; font-size: 14px; line-height: 1.5; }
+        body.dark-mode .novidade-item p { color: #aaa; }
 
         .novidades-footer {
             padding: 20px 25px;
@@ -693,10 +429,7 @@
             align-items: center;
         }
 
-        body.dark-mode .novidades-footer {
-            background: #2a2a2a;
-            border-top-color: #444;
-        }
+        body.dark-mode .novidades-footer { background: #2a2a2a; border-top-color: #444; }
 
         .checkbox-novidades {
             display: flex;
@@ -706,60 +439,19 @@
             color: #666;
         }
 
-        body.dark-mode .checkbox-novidades {
-            color: #aaa;
-        }
-
-        .checkbox-novidades input[type="checkbox"] {
-            width: auto;
-            cursor: pointer;
-        }
+        body.dark-mode .checkbox-novidades { color: #aaa; }
+        .checkbox-novidades input[type="checkbox"] { width: auto; cursor: pointer; }
 
         @media(max-width:768px) {
-            .card {
-                padding: 30px 20px;
-                max-width: 100%;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-                margin-bottom: 30px;
-                padding-bottom: 20px;
-            }
-
-            .header button {
-                width: 100%;
-            }
-
-            .input-group {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .input-group button {
-                width: 100%;
-            }
-
-            table {
-                font-size: 12px;
-                margin-top: 30px;
-            }
-
-            th,
-            td {
-                padding: 10px 8px;
-            }
-
-            .grafico-container {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
+            .card { padding: 30px 20px; max-width: 100%; }
+            h2 { font-size: 24px; }
+            .header { flex-direction: column; gap: 15px; align-items: flex-start; margin-bottom: 30px; padding-bottom: 20px; }
+            .header button { width: 100%; }
+            .input-group { flex-direction: column; gap: 10px; }
+            .input-group button { width: 100%; }
+            table { font-size: 12px; margin-top: 30px; }
+            th, td { padding: 10px 8px; }
+            .grafico-container { padding: 20px; margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -779,18 +471,15 @@
         <div class="section-title">📥 Adicionar Venda</div>
         <div class="input-group">
             <input type="date" id="data" aria-label="Data da venda">
-            <input type="number" id="valor" placeholder="Valor do dia" inputmode="decimal" min="0" step="0.01"
-                aria-label="Valor da venda">
-            <input type="text" id="tag" placeholder="Tag (ex.: Loja, Online...)" list="tagsList"
-                aria-label="Tag da venda">
+            <input type="number" id="valor" placeholder="Valor do dia" inputmode="decimal" min="0" step="0.01" aria-label="Valor da venda">
+            <input type="text" id="tag" placeholder="Tag (ex.: Loja, Online...)" list="tagsList" aria-label="Tag da venda">
             <datalist id="tagsList"></datalist>
             <button type="button" onclick="adicionar()">Adicionar</button>
         </div>
 
         <div class="section-title">⚙️ Configurações</div>
         <div class="input-group">
-            <input type="number" id="meta" placeholder="Meta mensal" value="180000" inputmode="decimal" min="0"
-                step="0.01" aria-label="Meta mensal">
+            <input type="number" id="meta" placeholder="Meta mensal" value="180000" inputmode="decimal" min="0" step="0.01" aria-label="Meta mensal">
             <button type="button" onclick="atualizar()">Atualizar Meta</button>
         </div>
 
@@ -850,8 +539,7 @@
         </div>
 
         <div class="progresso-container" style="margin-top:40px; margin-bottom:50px;">
-            <p class="progresso-texto" style="text-align:center; color:#666; font-weight:600; margin-bottom:10px;">
-                Progresso</p>
+            <p class="progresso-texto" style="text-align:center; color:#666; font-weight:600; margin-bottom:10px;">Progresso</p>
             <div class="bar-container">
                 <div class="bar" id="progresso" style="width:0%;" data-percentage="0%"></div>
             </div>
@@ -860,8 +548,7 @@
         <div class="content-wrapper">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
                 <p class="grafico-titulo" style="margin:0;">📈 Gráficos</p>
-                <button type="button" onclick="toggleGraficos()" id="btnToggleGraficos"
-                    style="background:#666; padding:8px 16px; font-size:12px;">👁️ Esconder</button>
+                <button type="button" onclick="toggleGraficos()" id="btnToggleGraficos" style="background:#666; padding:8px 16px; font-size:12px;">👁️ Esconder</button>
             </div>
 
             <div class="grafico-container" id="graficoContainer">
@@ -875,8 +562,20 @@
 
         <div class="section-title">📋 Registros de Vendas</div>
         <div class="search-box">
-            <input type="search" id="busca" placeholder="🔍 Buscar por data, valor ou tag..." onkeyup="filtrarTabela()"
-                autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <!-- ✅ FIX: impedir email no campo de busca (autofill do Chrome) -->
+            <input
+                type="search"
+                id="busca"
+                name="busca_vendas_anti_autofill"
+                placeholder="🔍 Buscar por data, valor ou tag..."
+                onkeyup="filtrarTabela()"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                spellcheck="false"
+                readonly
+                onfocus="this.removeAttribute('readonly');"
+            />
         </div>
 
         <div class="tabela-wrapper">
@@ -903,8 +602,7 @@
             </div>
             <div class="input-group" style="flex-direction:column; gap:15px;">
                 <input type="date" id="editarData" aria-label="Editar data">
-                <input type="number" id="editarValor" placeholder="Valor" inputmode="decimal" min="0" step="0.01"
-                    aria-label="Editar valor">
+                <input type="number" id="editarValor" placeholder="Valor" inputmode="decimal" min="0" step="0.01" aria-label="Editar valor">
                 <input type="text" id="editarTag" placeholder="Tag" list="tagsList" aria-label="Editar tag">
                 <div style="display:flex; gap:10px;">
                     <button type="button" onclick="salvarEdicao()" style="flex:1;">Salvar</button>
@@ -914,7 +612,7 @@
         </div>
     </div>
 
-    <!-- Modal de Novidades (mantido) -->
+    <!-- Modal de Novidades -->
     <div id="modalNovidades" class="modal">
         <div class="modal-content modal-novidades">
             <div class="novidades-header">
@@ -957,44 +655,34 @@
                 <div>
                     <h4 style="margin:0 0 15px 0; color:#0033cc;">🎨 Aparência</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="toggleDarkMode(); fecharModalConfig();" id="btnDarkModeModal"
-                            style="background:#666; width:100%;">🌙 Modo Escuro</button>
-                        <button type="button" onclick="document.getElementById('bgImageInput').click()"
-                            style="background:#9c27b0; width:100%;">🖼️ Escolher Imagem de Fundo</button>
-                        <button type="button" onclick="removerImagemFundo(); fecharModalConfig();"
-                            style="background:#f44336; width:100%;">🗑️ Remover Imagem</button>
-                        <input type="file" id="bgImageInput" accept="image/*" style="display:none;"
-                            onchange="aplicarImagemFundo(event)">
+                        <button type="button" onclick="toggleDarkMode(); fecharModalConfig();" id="btnDarkModeModal" style="background:#666; width:100%;">🌙 Modo Escuro</button>
+                        <button type="button" onclick="document.getElementById('bgImageInput').click()" style="background:#9c27b0; width:100%;">🖼️ Escolher Imagem de Fundo</button>
+                        <button type="button" onclick="removerImagemFundo(); fecharModalConfig();" style="background:#f44336; width:100%;">🗑️ Remover Imagem</button>
+                        <input type="file" id="bgImageInput" accept="image/*" style="display:none;" onchange="aplicarImagemFundo(event)">
                     </div>
                 </div>
 
                 <div>
                     <h4 style="margin:0 0 15px 0; color:#0033cc;">💾 Dados</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="exportarDados(); fecharModalConfig();"
-                            style="background:#28a745; width:100%;">💾 Exportar Dados</button>
-                        <button type="button" onclick="document.getElementById('importarInput').click()"
-                            style="background:#17a2b8; width:100%;">📥 Importar Dados</button>
-                        <input type="file" id="importarInput" accept=".json,.csv" style="display:none;"
-                            onchange="importarDados(event)">
+                        <button type="button" onclick="exportarDados(); fecharModalConfig();" style="background:#28a745; width:100%;">💾 Exportar Dados</button>
+                        <button type="button" onclick="document.getElementById('importarInput').click()" style="background:#17a2b8; width:100%;">📥 Importar Dados</button>
+                        <input type="file" id="importarInput" accept=".json,.csv" style="display:none;" onchange="importarDados(event)">
                     </div>
                 </div>
 
                 <div>
                     <h4 style="margin:0 0 15px 0; color:#0033cc;">📊 Gráficos</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="exportarGrafico('grafico'); fecharModalConfig();"
-                            style="background:#e91e63; width:100%;">📈 Exportar Gráfico de Vendas (PNG)</button>
-                        <button type="button" onclick="exportarGrafico('graficoComparativo'); fecharModalConfig();"
-                            style="background:#9c27b0; width:100%;">📊 Exportar Gráfico Comparativo (PNG)</button>
+                        <button type="button" onclick="exportarGrafico('grafico'); fecharModalConfig();" style="background:#e91e63; width:100%;">📈 Exportar Gráfico de Vendas (PNG)</button>
+                        <button type="button" onclick="exportarGrafico('graficoComparativo'); fecharModalConfig();" style="background:#9c27b0; width:100%;">📊 Exportar Gráfico Comparativo (PNG)</button>
                     </div>
                 </div>
 
                 <div>
                     <h4 style="margin:0 0 15px 0; color:#0033cc;">📄 Relatórios</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="gerarRelatorioPDF()" style="background:#ff6f00; width:100%;">📄
-                            Gerar Relatório PDF</button>
+                        <button type="button" onclick="gerarRelatorioPDF()" style="background:#ff6f00; width:100%;">📄 Gerar Relatório PDF</button>
                     </div>
                 </div>
 
@@ -1004,8 +692,7 @@
                         <div id="authStatus">Status: <strong>Deslogado</strong></div>
                     </div>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="abrirLoginModal()" style="background:#1565c0; width:100%;">🔐
-                            Entrar / Cadastrar</button>
+                        <button type="button" onclick="abrirLoginModal()" style="background:#1565c0; width:100%;">🔐 Entrar / Cadastrar</button>
                         <button type="button" onclick="logout()" style="background:#444; width:100%;">🚪 Sair</button>
                     </div>
                 </div>
@@ -1021,8 +708,8 @@
                 <button class="close-modal" type="button" onclick="fecharLoginModal()">&times;</button>
             </div>
             <div class="input-group" style="flex-direction:column; gap:12px;">
-                <input type="email" id="loginEmail" placeholder="Email" aria-label="Email">
-                <input type="password" id="loginSenha" placeholder="Senha (mín 6)" aria-label="Senha">
+                <input type="email" id="loginEmail" placeholder="Email" aria-label="Email" autocomplete="email">
+                <input type="password" id="loginSenha" placeholder="Senha (mín 6)" aria-label="Senha" autocomplete="current-password">
                 <button type="button" onclick="login()" style="width:100%;">Entrar</button>
                 <button type="button" onclick="registrar()" style="width:100%; background:#28a745;">Cadastrar</button>
                 <p style="font-size:12px; opacity:.85; line-height:1.4;">
@@ -1056,6 +743,31 @@
         }
 
         /********************
+         * ✅ FIX: impedir email no campo de busca (autofill)
+         ********************/
+        function limparBuscaSePareceEmail() {
+            const el = document.getElementById("busca");
+            if (!el) return;
+            const v = String(el.value || "").trim();
+
+            // se o chrome enfiar email aqui, a gente zera
+            if (v.includes("@") && v.includes(".")) {
+                el.value = "";
+                el.setAttribute("value", "");
+            }
+        }
+
+        function antiAutofillBusca() {
+            // tenta por ~2s (o autofill às vezes acontece depois do load)
+            let tries = 0;
+            const t = setInterval(() => {
+                limparBuscaSePareceEmail();
+                tries++;
+                if (tries >= 20) clearInterval(t);
+            }, 100);
+        }
+
+        /********************
          * Dados + Estado
          ********************/
         let vendas = safeJSONParse("vendas", []);
@@ -1086,10 +798,10 @@
 
             const icons = { success: "✅", error: "❌", warning: "⚠️", info: "ℹ️" };
             toast.innerHTML = `
-      <span class="toast-icon">${icons[type] || icons.info}</span>
-      <div class="toast-content">${message}</div>
-      <button class="toast-close" type="button" onclick="this.parentElement.remove()">&times;</button>
-    `;
+                <span class="toast-icon">${icons[type] || icons.info}</span>
+                <div class="toast-content">${message}</div>
+                <button class="toast-close" type="button" onclick="this.parentElement.remove()">&times;</button>
+            `;
             container.appendChild(toast);
 
             setTimeout(() => {
@@ -1106,7 +818,6 @@
         let currentUser = null;
         let applyingRemote = false;
 
-        // ✅ COLE AQUI o seu firebaseConfig (do console do Firebase)
         const firebaseConfig = {
             apiKey: "AIzaSyBqf9bUbM6PF1J0E1eXPQck8AUgMe9nznM",
             authDomain: "gw-metas.firebaseapp.com",
@@ -1118,7 +829,6 @@
 
         function initFirebase() {
             try {
-                // Evita inicializar com placeholder
                 if (!firebaseConfig || String(firebaseConfig.apiKey || "").includes("COLE_AQUI")) return;
 
                 fbApp = firebase.initializeApp(firebaseConfig);
@@ -1130,8 +840,19 @@
                     currentUser = user || null;
                     atualizarAuthUI();
 
+                    // ✅ FIX: garantir que busca não fique com email após login
+                    setTimeout(() => {
+                        limparBuscaSePareceEmail();
+                        antiAutofillBusca();
+                    }, 50);
+
                     if (currentUser) {
                         await carregarDoCloud();
+                        // ✅ FIX: de novo após sync (autofill pode ocorrer depois)
+                        setTimeout(() => {
+                            limparBuscaSePareceEmail();
+                            antiAutofillBusca();
+                        }, 50);
                     }
                 });
             } catch (e) {
@@ -1190,7 +911,6 @@
                 if (typeof data.meta === "number") metaMensal = data.meta;
                 if (Array.isArray(data.tags)) tags = data.tags;
 
-                // Preferências
                 const prefs = data.prefs || {};
                 if (typeof prefs.darkMode === "boolean") {
                     localStorage.setItem("darkMode", String(prefs.darkMode));
@@ -1206,10 +926,8 @@
                     localStorage.setItem("bgImage", prefs.bgImage);
                 }
 
-                // Persistir local também (offline)
                 salvarLocal();
 
-                // Reaplicar bg
                 const bgImage = localStorage.getItem("bgImage");
                 if (bgImage) {
                     document.body.style.backgroundImage = `url(${bgImage})`;
@@ -1225,6 +943,9 @@
 
                 applyingRemote = false;
                 showToast("Dados sincronizados da nuvem!", "success");
+
+                // ✅ FIX: mais uma garantia
+                limparBuscaSePareceEmail();
             } catch (e) {
                 applyingRemote = false;
                 console.warn(e);
@@ -1232,69 +953,48 @@
             }
         }
 
-        function abrirLoginModal() {
-            document.getElementById("modalLogin").style.display = "flex";
-        }
-        function fecharLoginModal() {
-            document.getElementById("modalLogin").style.display = "none";
-        }
+        function abrirLoginModal() { document.getElementById("modalLogin").style.display = "flex"; }
+        function fecharLoginModal() { document.getElementById("modalLogin").style.display = "none"; }
 
         async function login() {
-            if (!firebaseReady) {
-                showToast("Firebase não configurado. Cole o firebaseConfig.", "warning");
-                return;
-            }
+            if (!firebaseReady) { showToast("Firebase não configurado. Cole o firebaseConfig.", "warning"); return; }
             const email = document.getElementById("loginEmail").value.trim();
             const senha = document.getElementById("loginSenha").value;
 
-            if (!email || !senha) {
-                showToast("Preencha email e senha.", "error");
-                return;
-            }
+            if (!email || !senha) { showToast("Preencha email e senha.", "error"); return; }
 
             try {
                 await fbAuth.signInWithEmailAndPassword(email, senha);
                 showToast("Login realizado!", "success");
                 fecharLoginModal();
+                setTimeout(() => { limparBuscaSePareceEmail(); antiAutofillBusca(); }, 50);
             } catch (e) {
                 showToast("Falha no login: " + (e.message || "erro"), "error");
             }
         }
 
         async function registrar() {
-            if (!firebaseReady) {
-                showToast("Firebase não configurado. Cole o firebaseConfig.", "warning");
-                return;
-            }
+            if (!firebaseReady) { showToast("Firebase não configurado. Cole o firebaseConfig.", "warning"); return; }
             const email = document.getElementById("loginEmail").value.trim();
             const senha = document.getElementById("loginSenha").value;
 
-            if (!email || !senha || senha.length < 6) {
-                showToast("Informe email e senha (mínimo 6 caracteres).", "error");
-                return;
-            }
+            if (!email || !senha || senha.length < 6) { showToast("Informe email e senha (mínimo 6 caracteres).", "error"); return; }
 
             try {
                 await fbAuth.createUserWithEmailAndPassword(email, senha);
                 showToast("Conta criada e logada!", "success");
                 fecharLoginModal();
                 await salvarNoCloud();
+                setTimeout(() => { limparBuscaSePareceEmail(); antiAutofillBusca(); }, 50);
             } catch (e) {
                 showToast("Falha ao cadastrar: " + (e.message || "erro"), "error");
             }
         }
 
         async function logout() {
-            if (!firebaseReady || !fbAuth) {
-                showToast("Você já está deslogado.", "info");
-                return;
-            }
-            try {
-                await fbAuth.signOut();
-                showToast("Saiu da conta.", "success");
-            } catch (e) {
-                showToast("Erro ao sair.", "error");
-            }
+            if (!firebaseReady || !fbAuth) { showToast("Você já está deslogado.", "info"); return; }
+            try { await fbAuth.signOut(); showToast("Saiu da conta.", "success"); }
+            catch (e) { showToast("Erro ao sair.", "error"); }
         }
 
         /********************
@@ -1366,22 +1066,12 @@
             const valor = Number(document.getElementById("valor").value);
             const tag = normalizarTag(document.getElementById("tag").value);
 
-            if (!data || !valor) {
-                showToast("Preencha data e valor!", "error");
-                return;
-            }
-            if (isDataFutura(data)) {
-                showToast("Não é possível adicionar vendas com data futura!", "error");
-                return;
-            }
-            if (valor <= 0) {
-                showToast("O valor deve ser maior que zero!", "error");
-                return;
-            }
+            if (!data || !valor) { showToast("Preencha data e valor!", "error"); return; }
+            if (isDataFutura(data)) { showToast("Não é possível adicionar vendas com data futura!", "error"); return; }
+            if (valor <= 0) { showToast("O valor deve ser maior que zero!", "error"); return; }
 
             registrarTagSeNova(tag);
 
-            // Duplicata por data+tag
             const existente = vendas.find(v => v.data === data && normalizarTag(v.tag) === tag);
             if (existente) {
                 const opcao = confirm(`Já existe uma venda em ${dataBR(data)} (${tag}) no valor de ${brl(existente.valor)}.\n\nDeseja:\n- OK: Somar os valores\n- Cancelar: Substituir o valor anterior`);
@@ -1423,14 +1113,12 @@
         function render() {
             tabela.innerHTML = "";
 
-            // Ordena por data desc (e tag)
             vendas.sort((a, b) => {
                 const d = String(b.data).localeCompare(String(a.data));
                 if (d !== 0) return d;
                 return normalizarTag(a.tag).localeCompare(normalizarTag(b.tag));
             });
 
-            // Agrupar por mês (YYYY-MM)
             const vendasPorMes = {};
             vendas.forEach(item => {
                 const mes = String(item.data || "").slice(0, 7);
@@ -1438,32 +1126,28 @@
                 vendasPorMes[mes].push(item);
             });
 
-            // Render tabela
             Object.keys(vendasPorMes).sort().reverse().forEach(mes => {
                 const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
                 const [ano, mesCod] = mes.split("-");
                 const mesNome = meses[parseInt(mesCod, 10) - 1] || mesCod;
 
-                tabela.innerHTML += `
-        <tr><td colspan="4" class="mes-titulo">${mesNome} / ${ano}</td></tr>
-      `;
+                tabela.innerHTML += `<tr><td colspan="4" class="mes-titulo">${mesNome} / ${ano}</td></tr>`;
 
                 vendasPorMes[mes].forEach(item => {
                     tabela.innerHTML += `
-          <tr class="linha-venda">
-            <td>${dataBR(item.data)}</td>
-            <td>${brl(item.valor)}</td>
-            <td>${normalizarTag(item.tag)}</td>
-            <td>
-              <button class="btn-edit" type="button" onclick="editarPorId('${item.id}')">Editar</button>
-              <button class="btn-delete" type="button" onclick="excluirPorId('${item.id}')">Excluir</button>
-            </td>
-          </tr>
-        `;
+                        <tr class="linha-venda">
+                            <td>${dataBR(item.data)}</td>
+                            <td>${brl(item.valor)}</td>
+                            <td>${normalizarTag(item.tag)}</td>
+                            <td>
+                                <button class="btn-edit" type="button" onclick="editarPorId('${item.id}')">Editar</button>
+                                <button class="btn-delete" type="button" onclick="excluirPorId('${item.id}')">Excluir</button>
+                            </td>
+                        </tr>
+                    `;
                 });
             });
 
-            // Resumo do mês atual
             const mesAtual = mesISO(new Date());
             const vendasMes = vendasDoMes(mesAtual);
             const totalMes = vendasMes.reduce((s, v) => s + Number(v.valor || 0), 0);
@@ -1474,14 +1158,12 @@
             const faltam = Math.max(0, metaMensal - totalMes);
             faltamEl.innerText = brl(faltam);
 
-            // Progresso
             let prog = metaMensal > 0 ? (totalMes / metaMensal) * 100 : 0;
             prog = Math.max(0, Math.min(100, prog));
             const progAr = Math.round(prog);
             progressoEl.style.width = prog + "%";
             progressoEl.setAttribute("data-percentage", progAr + "%");
 
-            // Meta atingida
             if (totalMes >= metaMensal && metaMensal > 0 && !metaAtingida) {
                 metaAtingida = true;
                 dispararConfete();
@@ -1489,19 +1171,10 @@
                 metaAtingida = false;
             }
 
-            // Gráfico do mês (labels em dd/mm)
-            const labelsMes = vendasMes
-                .slice()
-                .sort((a, b) => String(a.data).localeCompare(String(b.data)))
-                .map(v => dataBR(v.data));
-            const valoresMes = vendasMes
-                .slice()
-                .sort((a, b) => String(a.data).localeCompare(String(b.data)))
-                .map(v => Number(v.valor || 0));
-
+            const labelsMes = vendasMes.slice().sort((a, b) => String(a.data).localeCompare(String(b.data))).map(v => dataBR(v.data));
+            const valoresMes = vendasMes.slice().sort((a, b) => String(a.data).localeCompare(String(b.data))).map(v => Number(v.valor || 0));
             grafico(labelsMes, valoresMes);
 
-            // Comparativo 30 dias (global)
             const hoje = new Date();
             const labelsComparacao = [];
             const periodoAtual = [];
@@ -1529,6 +1202,9 @@
 
             calcularEstatisticas(vendasMes);
             calcularPrevisaoMeta(totalMes);
+
+            // ✅ FIX: se o chrome “colar” email na busca durante re-render, limpa
+            limparBuscaSePareceEmail();
         }
 
         function calcularEstatisticas(vendasMes) {
@@ -1555,20 +1231,14 @@
 
         function calcularPrevisaoMeta(totalAtual) {
             const box = document.getElementById("previsaoMeta");
-            if (metaMensal <= 0) {
-                box.style.display = "none";
-                return;
-            }
+            if (metaMensal <= 0) { box.style.display = "none"; return; }
 
             const hoje = new Date();
             const ultimoDiaMes = new Date(hoje.getFullYear(), hoje.getMonth() + 1, 0);
             const diasRestantes = ultimoDiaMes.getDate() - hoje.getDate() + 1;
 
             const faltam = metaMensal - totalAtual;
-            if (faltam <= 0) {
-                box.style.display = "none";
-                return;
-            }
+            if (faltam <= 0) { box.style.display = "none"; return; }
             box.style.display = "block";
 
             const porDia = diasRestantes > 0 ? faltam / diasRestantes : 0;
@@ -1576,9 +1246,6 @@
             document.getElementById("valorPorDia").innerText = brl(porDia);
         }
 
-        /********************
-         * Edição / Exclusão por ID
-         ********************/
         function editarPorId(id) {
             const venda = vendas.find(v => v.id === id);
             if (!venda) return;
@@ -1600,25 +1267,15 @@
             const valor = Number(document.getElementById("editarValor").value);
             const tag = normalizarTag(document.getElementById("editarTag").value);
 
-            if (!data || !valor) {
-                showToast("Preencha data e valor!", "error");
-                return;
-            }
-            if (isDataFutura(data)) {
-                showToast("Não é possível usar data futura!", "error");
-                return;
-            }
-            if (valor <= 0) {
-                showToast("O valor deve ser maior que zero!", "error");
-                return;
-            }
+            if (!data || !valor) { showToast("Preencha data e valor!", "error"); return; }
+            if (isDataFutura(data)) { showToast("Não é possível usar data futura!", "error"); return; }
+            if (valor <= 0) { showToast("O valor deve ser maior que zero!", "error"); return; }
 
             if (indiceEditandoId) {
                 const i = vendas.findIndex(v => v.id === indiceEditandoId);
                 if (i >= 0) {
                     registrarTagSeNova(tag);
 
-                    // se virar duplicata data+tag, perguntar
                     const dup = vendas.find(v => v.id !== indiceEditandoId && v.data === data && normalizarTag(v.tag) === tag);
                     if (dup) {
                         const opcao = confirm(`Já existe outra venda em ${dataBR(data)} (${tag}) no valor de ${brl(dup.valor)}.\n\nDeseja:\n- OK: Somar e remover a duplicada\n- Cancelar: Substituir a duplicada e remover a sua`);
@@ -1654,9 +1311,6 @@
             }
         }
 
-        /********************
-         * Buscar na tabela
-         ********************/
         function filtrarTabela() {
             const busca = document.getElementById("busca").value.toLowerCase();
             const linhas = document.querySelectorAll(".linha-venda");
@@ -1666,16 +1320,8 @@
             });
         }
 
-        /********************
-         * Export / Import (mantido, agora com tag+id)
-         ********************/
         function exportarDados() {
-            const dados = {
-                vendas,
-                meta: metaMensal,
-                tags,
-                dataExportacao: new Date().toISOString()
-            };
+            const dados = { vendas, meta: metaMensal, tags, dataExportacao: new Date().toISOString() };
 
             const jsonStr = JSON.stringify(dados, null, 2);
             const blob = new Blob([jsonStr], { type: "application/json" });
@@ -1770,35 +1416,26 @@
             event.target.value = "";
         }
 
-        /********************
-         * PDF Relatório
-         ********************/
         async function gerarRelatorioPDF() {
             try {
                 const { jsPDF } = window.jspdf;
 
                 const container = document.getElementById("graficoContainer");
                 const estavaEscondido = container?.classList.contains("escondido");
-
-                // se estiver escondido, mostra temporariamente pra canvas não ficar 0x0
                 if (estavaEscondido) container.classList.remove("escondido");
 
-                // espera o layout + Chart.js renderizar
                 await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
                 await new Promise(r => setTimeout(r, 300));
 
-                // força update dos charts se existirem
-                if (window.chart) window.chart.update();
-                if (window.chartComparativo) window.chartComparativo.update();
+                if (chart) chart.update();
+                if (chartComparativo) chartComparativo.update();
 
                 await new Promise(r => setTimeout(r, 200));
 
                 const c1 = document.getElementById("grafico");
                 const c2 = document.getElementById("graficoComparativo");
-
                 if (!c1 || !c2) throw new Error("Canvas dos gráficos não encontrado.");
 
-                // Use dimensões internas do canvas (mais confiável que clientWidth/Height)
                 const w1 = c1.width, h1 = c1.height;
                 const w2 = c2.width, h2 = c2.height;
 
@@ -1811,23 +1448,14 @@
                     tmp.width = canvas.width;
                     tmp.height = canvas.height;
                     const ctx = tmp.getContext("2d");
-
-                    // fundo branco
                     ctx.fillStyle = "#fff";
                     ctx.fillRect(0, 0, tmp.width, tmp.height);
-
-                    // desenha o gráfico por cima
                     ctx.drawImage(canvas, 0, 0);
-
                     return tmp.toDataURL("image/jpeg", 0.95);
                 }
 
-                // JPEG é mais estável que PNG no jsPDF
                 const img1 = canvasToWhiteJpeg(c1);
                 const img2 = canvasToWhiteJpeg(c2);
-
-                if (!img1.startsWith("data:image/") || img1.length < 1000) throw new Error("Imagem do gráfico 1 inválida.");
-                if (!img2.startsWith("data:image/") || img2.length < 1000) throw new Error("Imagem do gráfico 2 inválida.");
 
                 const doc = new jsPDF("p", "mm", "a4");
                 const margin = 15;
@@ -1835,7 +1463,6 @@
                 const pageH = doc.internal.pageSize.getHeight();
                 const maxW = pageW - margin * 2;
 
-                // cabeçalho
                 const total = vendas.reduce((s, v) => s + (Number(v.valor) || 0), 0);
                 let y = 18;
 
@@ -1852,7 +1479,6 @@
 
                 y += 12;
 
-                // gráfico 1
                 doc.setFont("helvetica", "bold");
                 doc.text("Gráfico de Vendas do Mês", margin, y);
                 y += 5;
@@ -1861,14 +1487,12 @@
                 doc.addImage(img1, "JPEG", margin, y, maxW, pdfH1);
                 y += pdfH1 + 10;
 
-                // quebra de página se precisar
                 const pdfH2 = (maxW * h2) / w2;
                 if (y + pdfH2 + 15 > pageH) {
                     doc.addPage();
                     y = 18;
                 }
 
-                // gráfico 2
                 doc.text("Comparação Últimos 30 Dias", margin, y);
                 y += 5;
                 doc.addImage(img2, "JPEG", margin, y, maxW, pdfH2);
@@ -1876,7 +1500,6 @@
                 doc.save(`relatorio-${new Date().toISOString().slice(0, 10)}.pdf`);
                 showToast("PDF gerado com sucesso!", "success");
 
-                // volta ao estado anterior
                 if (estavaEscondido) container.classList.add("escondido");
 
             } catch (err) {
@@ -1885,10 +1508,6 @@
             }
         }
 
-
-        /********************
-         * Gráficos + toggle
-         ********************/
         function toggleGraficos() {
             const container = document.getElementById("graficoContainer");
             const btn = document.getElementById("btnToggleGraficos");
@@ -1946,9 +1565,6 @@
             showToast("Gráfico exportado com sucesso!", "success");
         }
 
-        /********************
-         * Config / Tema / Fundo
-         ********************/
         function abrirConfig() {
             document.getElementById("modalConfig").style.display = "flex";
             const isDark = document.body.classList.contains("dark-mode");
@@ -2002,9 +1618,6 @@
             salvarNoCloud();
         }
 
-        /********************
-         * Limpar mês / Reset
-         ********************/
         function limparMes() {
             const data = document.getElementById("dataLimpeza").value;
             if (!data) { showToast("Selecione uma data para limpar o mês!", "warning"); return; }
@@ -2025,9 +1638,6 @@
             render();
         }
 
-        /********************
-         * Novidades
-         ********************/
         function fecharNovidades() {
             const naoMostrar = document.getElementById("naoMostrarNovidades").checked;
             if (naoMostrar) localStorage.setItem("novidadesMostradas", "true");
@@ -2041,9 +1651,6 @@
             }
         }
 
-        /********************
-         * Clique fora fecha modais
-         ********************/
         window.onclick = function (event) {
             const modalEditar = document.getElementById("modalEditar");
             const modalConfig = document.getElementById("modalConfig");
@@ -2056,9 +1663,6 @@
             if (event.target === modalLogin) fecharLoginModal();
         };
 
-        /********************
-         * Estado inicial
-         ********************/
         // Gráficos
         if (!graficosVisiveis) {
             document.getElementById("graficoContainer").classList.add("escondido");
@@ -2089,19 +1693,16 @@
         // Novidades
         mostrarNovidades();
 
-
-
+        // ✅ FIX: roda no carregamento também
         window.addEventListener("load", () => {
-            const busca = document.getElementById("busca");
-            if (busca) {
-                busca.value = "";
-                busca.setAttribute("value", "");
-            }
+            limparBuscaSePareceEmail();
+            antiAutofillBusca();
         });
-
-    
+        document.addEventListener("DOMContentLoaded", () => {
+            limparBuscaSePareceEmail();
+            antiAutofillBusca();
+        });
     </script>
 
 </body>
-
 </html>
