@@ -1258,78 +1258,102 @@
   /********************
    * PDF Relatório
    ********************/
-  async function gerarRelatorioPDF(){
-    try{
-      const { jsPDF } = window.jspdf;
-      const doc = new jsPDF({ unit:"pt", format:"a4" });
+ async function gerarRelatorioPDF() {
+  try {
+    const { jsPDF } = window.jspdf;
 
-      const mesAtual = mesISO(new Date());
-      const vendasMes = vendasDoMes(mesAtual);
-      const totalMes = vendasMes.reduce((s,v)=>s + Number(v.valor||0), 0);
-      const faltam = Math.max(0, metaMensal - totalMes);
-      const perc = metaMensal > 0 ? Math.round((totalMes/metaMensal)*100) : 0;
+    const container = document.getElementById("graficoContainer");
+    const estavaEscondido = container?.classList.contains("escondido");
 
-      // Se gráficos estiverem escondidos, mostra temporariamente
-      const container = document.getElementById("graficoContainer");
-      const estavaEscondido = container.classList.contains("escondido");
-      if (estavaEscondido) container.classList.remove("escondido");
+    // se estiver escondido, mostra temporariamente pra canvas não ficar 0x0
+    if (estavaEscondido) container.classList.remove("escondido");
 
-      // pega imagens dos canvases
-      const c1 = document.getElementById("grafico");
-      const c2 = document.getElementById("graficoComparativo");
-      const img1 = c1.toDataURL("image/png", 1.0);
-      const img2 = c2.toDataURL("image/png", 1.0);
+    // espera o layout + Chart.js renderizar
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    await new Promise(r => setTimeout(r, 300));
 
-      // volta estado
-      if (estavaEscondido) container.classList.add("escondido");
+    // força update dos charts se existirem
+    if (window.chart) window.chart.update();
+    if (window.chartComparativo) window.chartComparativo.update();
 
-      // Cabeçalho
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(16);
-      doc.text("RELATÓRIO - CONTROLE DE METAS", 40, 50);
+    await new Promise(r => setTimeout(r, 200));
 
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(11);
-      doc.text(`Mês: ${mesAtual}`, 40, 75);
-      doc.text(`Gerado em: ${new Date().toLocaleString("pt-BR")}`, 40, 92);
+    const c1 = document.getElementById("grafico");
+    const c2 = document.getElementById("graficoComparativo");
 
-      // Resumo
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(12);
-      doc.text("Resumo", 40, 125);
+    if (!c1 || !c2) throw new Error("Canvas dos gráficos não encontrado.");
 
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(11);
-      doc.text(`Meta: ${brl(metaMensal)}`, 40, 148);
-      doc.text(`Total batido: ${brl(totalMes)}`, 40, 165);
-      doc.text(`Faltam: ${brl(faltam)}`, 40, 182);
-      doc.text(`Progresso: ${perc}%`, 40, 199);
+    // Use dimensões internas do canvas (mais confiável que clientWidth/Height)
+    const w1 = c1.width, h1 = c1.height;
+    const w2 = c2.width, h2 = c2.height;
 
-      // Gráficos
-      doc.setFont("helvetica", "bold");
-      doc.setFontSize(12);
-      doc.text("Gráficos", 40, 235);
-
-      const pageW = doc.internal.pageSize.getWidth();
-      const usableW = pageW - 80;
-
-      // imagem 1
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(11);
-      doc.text("Vendas do mês", 40, 258);
-      doc.addImage(img1, "PNG", 40, 270, usableW, 200);
-
-      // imagem 2
-      doc.text("Comparação últimos 30 dias", 40, 500);
-      doc.addImage(img2, "PNG", 40, 512, usableW, 200);
-
-      doc.save(`relatorio-${mesAtual}.pdf`);
-      showToast("PDF gerado com sucesso!", "success");
-    } catch (e){
-      console.warn(e);
-      showToast("Falha ao gerar PDF.", "error");
+    if (!w1 || !h1 || !w2 || !h2) {
+      throw new Error("Gráficos ainda não renderizaram (canvas 0x0). Mostre os gráficos e tente novamente.");
     }
+
+    // JPEG é mais estável que PNG no jsPDF
+    const img1 = c1.toDataURL("image/jpeg", 0.95);
+    const img2 = c2.toDataURL("image/jpeg", 0.95);
+
+    if (!img1.startsWith("data:image/") || img1.length < 1000) throw new Error("Imagem do gráfico 1 inválida.");
+    if (!img2.startsWith("data:image/") || img2.length < 1000) throw new Error("Imagem do gráfico 2 inválida.");
+
+    const doc = new jsPDF("p", "mm", "a4");
+    const margin = 15;
+    const pageW = doc.internal.pageSize.getWidth();
+    const pageH = doc.internal.pageSize.getHeight();
+    const maxW = pageW - margin * 2;
+
+    // cabeçalho
+    const total = vendas.reduce((s, v) => s + (Number(v.valor) || 0), 0);
+    let y = 18;
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(16);
+    doc.text("Relatório - Controle de Metas", margin, y);
+
+    y += 10;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.text(`Meta mensal: R$ ${metaMensal.toLocaleString()}`, margin, y);
+    y += 7;
+    doc.text(`Total batido: R$ ${total.toLocaleString()}`, margin, y);
+
+    y += 12;
+
+    // gráfico 1
+    doc.setFont("helvetica", "bold");
+    doc.text("Gráfico de Vendas do Mês", margin, y);
+    y += 5;
+
+    const pdfH1 = (maxW * h1) / w1;
+    doc.addImage(img1, "JPEG", margin, y, maxW, pdfH1);
+    y += pdfH1 + 10;
+
+    // quebra de página se precisar
+    const pdfH2 = (maxW * h2) / w2;
+    if (y + pdfH2 + 15 > pageH) {
+      doc.addPage();
+      y = 18;
+    }
+
+    // gráfico 2
+    doc.text("Comparação Últimos 30 Dias", margin, y);
+    y += 5;
+    doc.addImage(img2, "JPEG", margin, y, maxW, pdfH2);
+
+    doc.save(`relatorio-${new Date().toISOString().slice(0, 10)}.pdf`);
+    showToast("PDF gerado com sucesso!", "success");
+
+    // volta ao estado anterior
+    if (estavaEscondido) container.classList.add("escondido");
+
+  } catch (err) {
+    console.error(err);
+    showToast("Falha ao gerar PDF: " + (err?.message || err), "error", 6000);
   }
+}
+
 
   /********************
    * Gráficos + toggle
