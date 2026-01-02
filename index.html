@@ -10,6 +10,9 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
+    <!-- ✅ Font Awesome (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- Firebase (compat para ficar simples em HTML puro) -->
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
@@ -18,7 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: "Poppins", sans-serif;
@@ -32,9 +39,17 @@
             background-attachment: fixed;
         }
 
-        body.dark-mode { background: #0a0a0a; }
-        body.dark-mode.has-bg-image { background-color: #0a0a0a; }
-        body.has-bg-image { background-color: #0033cc; }
+        body.dark-mode {
+            background: #0a0a0a;
+        }
+
+        body.dark-mode.has-bg-image {
+            background-color: #0a0a0a;
+        }
+
+        body.has-bg-image {
+            background-color: #0033cc;
+        }
 
         .card {
             background: #fff;
@@ -46,7 +61,10 @@
             transition: all .3s ease;
         }
 
-        body.dark-mode .card { background: #1a1a1a; color: #e0e0e0; }
+        body.dark-mode .card {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
 
         .card:hover {
             transform: translateY(-3px);
@@ -69,7 +87,9 @@
             transition: color .3s ease;
         }
 
-        body.dark-mode h2 { color: #4a9eff; }
+        body.dark-mode h2 {
+            color: #4a9eff;
+        }
 
         .input-group {
             display: flex;
@@ -78,7 +98,8 @@
             align-items: center;
         }
 
-        input, select {
+        input,
+        select {
             padding: 12px 16px;
             border: 2px solid #e0e0e0;
             border-radius: 10px;
@@ -88,13 +109,15 @@
             background: #fff;
         }
 
-        body.dark-mode input, body.dark-mode select {
+        body.dark-mode input,
+        body.dark-mode select {
             background: #2a2a2a;
             color: #e0e0e0;
             border-color: #444;
         }
 
-        input:focus, select:focus {
+        input:focus,
+        select:focus {
             outline: none;
             border-color: #0033cc;
             box-shadow: 0 0 0 3px rgba(0, 51, 204, .1);
@@ -118,7 +141,22 @@
             box-shadow: 0 10px 20px rgba(0, 51, 204, .3);
         }
 
-        button:active { transform: translateY(0); }
+        button:active {
+            transform: translateY(0);
+        }
+
+        /* ✅ espaçamento padrão dos ícones */
+        button i {
+            margin-right: 8px;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+        }
+
+        .grafico-titulo i {
+            margin-right: 10px;
+        }
 
         .stats-container {
             display: grid;
@@ -141,13 +179,43 @@
             box-shadow: 0 12px 32px rgba(0, 51, 204, .15);
         }
 
-        .stat-card-icon { font-size: 32px; margin-bottom: 12px; display: block; }
-        .stat-card p { font-size: 13px; margin: 0 0 8px 0; opacity: .8; letter-spacing: .5px; }
-        .stat-card strong { font-size: 32px; display: block; font-weight: 700; line-height: 1.2; }
+        .stat-card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
 
-        .stat-card.total { background: #0033cc; color: #fff; box-shadow: 0 4px 12px rgba(0, 51, 204, .15); }
-        .stat-card.meta { background: #ffd600; color: #000; box-shadow: 0 4px 12px rgba(255, 214, 0, .15); }
-        .stat-card.faltam { background: #0033cc; color: #fff; box-shadow: 0 4px 12px rgba(0, 51, 204, .15); }
+        .stat-card p {
+            font-size: 13px;
+            margin: 0 0 8px 0;
+            opacity: .8;
+            letter-spacing: .5px;
+        }
+
+        .stat-card strong {
+            font-size: 32px;
+            display: block;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-card.total {
+            background: #0033cc;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 51, 204, .15);
+        }
+
+        .stat-card.meta {
+            background: #ffd600;
+            color: #000;
+            box-shadow: 0 4px 12px rgba(255, 214, 0, .15);
+        }
+
+        .stat-card.faltam {
+            background: #0033cc;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 51, 204, .15);
+        }
 
         .bar-container {
             background: #e8e8e8;
@@ -160,7 +228,9 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
         }
 
-        body.dark-mode .bar-container { background: #2a2a2a; }
+        body.dark-mode .bar-container {
+            background: #2a2a2a;
+        }
 
         .bar {
             height: 100%;
@@ -175,7 +245,13 @@
             min-width: 50px;
         }
 
-        .bar::after { content: attr(data-percentage); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .5px; }
+        .bar::after {
+            content: attr(data-percentage);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
 
         .section-title {
             font-size: 20px;
@@ -187,10 +263,17 @@
             transition: color .3s ease;
         }
 
-        body.dark-mode .section-title { color: #4a9eff; }
+        body.dark-mode .section-title {
+            color: #4a9eff;
+        }
 
-        .search-box { margin-bottom: 20px; }
-        .search-box input { width: 100%; }
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
 
         .stats-extras {
             display: grid;
@@ -207,10 +290,26 @@
             box-shadow: 0 2px 8px rgba(0, 51, 204, .08);
         }
 
-        body.dark-mode .stat-card-extra { background: #2a2a2a; }
-        .stat-card-extra p { font-size: 12px; margin: 0 0 8px 0; opacity: .8; }
-        .stat-card-extra strong { font-size: 20px; display: block; font-weight: 700; color: #0033cc; }
-        body.dark-mode .stat-card-extra strong { color: #4a9eff; }
+        body.dark-mode .stat-card-extra {
+            background: #2a2a2a;
+        }
+
+        .stat-card-extra p {
+            font-size: 12px;
+            margin: 0 0 8px 0;
+            opacity: .8;
+        }
+
+        .stat-card-extra strong {
+            font-size: 20px;
+            display: block;
+            font-weight: 700;
+            color: #0033cc;
+        }
+
+        body.dark-mode .stat-card-extra strong {
+            color: #4a9eff;
+        }
 
         .previsao-meta {
             background: #0033cc;
@@ -221,7 +320,10 @@
             box-shadow: 0 4px 12px rgba(102, 126, 234, .3);
         }
 
-        .previsao-meta h4 { margin: 0 0 15px 0; font-size: 18px; }
+        .previsao-meta h4 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+        }
 
         .previsao-item {
             display: flex;
@@ -230,10 +332,20 @@
             border-bottom: 1px solid rgba(255, 255, 255, .2);
         }
 
-        .previsao-item:last-child { border-bottom: none; }
-        .previsao-item strong { font-size: 20px; }
+        .previsao-item:last-child {
+            border-bottom: none;
+        }
 
-        .content-wrapper { display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px; }
+        .previsao-item strong {
+            font-size: 20px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
 
         .grafico-container {
             background: rgba(0, 51, 204, .03);
@@ -245,25 +357,83 @@
             transition: all .3s ease;
         }
 
-        body.dark-mode .grafico-container { background: rgba(74, 158, 255, .05); border-color: rgba(74, 158, 255, .2); }
-        .grafico-container.escondido { display: none; }
+        body.dark-mode .grafico-container {
+            background: rgba(74, 158, 255, .05);
+            border-color: rgba(74, 158, 255, .2);
+        }
 
-        .grafico-titulo { font-size: 18px; font-weight: 700; color: #0033cc; margin-bottom: 25px; text-align: left; }
-        body.dark-mode .grafico-titulo { color: #4a9eff; }
+        .grafico-container.escondido {
+            display: none;
+        }
 
-        canvas { max-width: 100%; display: block !important; margin-top: 30px; padding: 20px 0; }
+        .grafico-titulo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0033cc;
+            margin-bottom: 25px;
+            text-align: left;
+        }
 
-        table { width: 100%; margin-top: 40px; border-collapse: collapse; font-size: 14px; }
-        thead { background: #0033cc; color: #fff; }
-        body.dark-mode thead { background: #4a9eff; }
-        th { padding: 16px; text-align: center; font-weight: 600; }
-        td { padding: 14px 16px; text-align: center; border-bottom: 1px solid #e0e0e0; }
+        body.dark-mode .grafico-titulo {
+            color: #4a9eff;
+        }
 
-        tbody tr:hover { background: #f0f5ff; transition: background .2s ease; }
-        body.dark-mode tbody tr:hover { background: #2a2a2a; }
+        canvas {
+            max-width: 100%;
+            display: block !important;
+            margin-top: 30px;
+            padding: 20px 0;
+        }
 
-        .mes-titulo { background: #0033cc; color: #fff; padding: 14px 16px; font-weight: 700; text-align: left; font-size: 16px; }
-        body.dark-mode .mes-titulo { background: #4a9eff; }
+        table {
+            width: 100%;
+            margin-top: 40px;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead {
+            background: #0033cc;
+            color: #fff;
+        }
+
+        body.dark-mode thead {
+            background: #4a9eff;
+        }
+
+        th {
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 14px 16px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:hover {
+            background: #f0f5ff;
+            transition: background .2s ease;
+        }
+
+        body.dark-mode tbody tr:hover {
+            background: #2a2a2a;
+        }
+
+        .mes-titulo {
+            background: #0033cc;
+            color: #fff;
+            padding: 14px 16px;
+            font-weight: 700;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        body.dark-mode .mes-titulo {
+            background: #4a9eff;
+        }
 
         .btn-delete {
             background: #ffd600;
@@ -314,23 +484,63 @@
             border-left: 4px solid #0033cc;
         }
 
-        body.dark-mode .toast { background: #2a2a2a; color: #e0e0e0; border-left-color: #4a9eff; }
-        .toast.success { border-left-color: #28a745; }
-        .toast.error { border-left-color: #dc3545; }
-        .toast.warning { border-left-color: #ffc107; }
-        .toast.info { border-left-color: #17a2b8; }
+        body.dark-mode .toast {
+            background: #2a2a2a;
+            color: #e0e0e0;
+            border-left-color: #4a9eff;
+        }
+
+        .toast.success {
+            border-left-color: #28a745;
+        }
+
+        .toast.error {
+            border-left-color: #dc3545;
+        }
+
+        .toast.warning {
+            border-left-color: #ffc107;
+        }
+
+        .toast.info {
+            border-left-color: #17a2b8;
+        }
 
         @keyframes slideIn {
-            from { transform: translateX(400px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
+
         @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(400px); opacity: 0; }
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
         }
-        .toast.hiding { animation: slideOut .3s ease forwards; }
-        .toast-icon { font-size: 24px; }
-        .toast-content { flex: 1; }
+
+        .toast.hiding {
+            animation: slideOut .3s ease forwards;
+        }
+
+        .toast-icon {
+            font-size: 24px;
+        }
+
+        .toast-content {
+            flex: 1;
+        }
 
         .toast-close {
             background: none;
@@ -345,7 +555,10 @@
             align-items: center;
             justify-content: center;
         }
-        body.dark-mode .toast-close { color: #aaa; }
+
+        body.dark-mode .toast-close {
+            color: #aaa;
+        }
 
         /* Modais */
         .modal {
@@ -370,7 +583,10 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, .3);
         }
 
-        body.dark-mode .modal-content { background: #1a1a1a; color: #e0e0e0; }
+        body.dark-mode .modal-content {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
 
         .modal-header {
             display: flex;
@@ -379,19 +595,53 @@
             margin-bottom: 20px;
         }
 
-        .close-modal { background: none; border: none; font-size: 24px; cursor: pointer; color: #666; }
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
 
         /* Wrapper tabela */
-        .tabela-wrapper { max-height: 600px; overflow-y: auto; position: relative; }
-        .tabela-wrapper::-webkit-scrollbar { width: 8px; }
-        .tabela-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        body.dark-mode .tabela-wrapper::-webkit-scrollbar-track { background: #2a2a2a; }
-        .tabela-wrapper::-webkit-scrollbar-thumb { background: #0033cc; border-radius: 10px; }
-        body.dark-mode .tabela-wrapper::-webkit-scrollbar-thumb { background: #4a9eff; }
+        .tabela-wrapper {
+            max-height: 600px;
+            overflow-y: auto;
+            position: relative;
+        }
 
-        /* Modal novidades */
-        .modal-novidades { max-width: 600px; width: 90%; }
-        .modal-novidades .modal-content { padding: 0; overflow: hidden; }
+        .tabela-wrapper::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .tabela-wrapper::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        body.dark-mode .tabela-wrapper::-webkit-scrollbar-track {
+            background: #2a2a2a;
+        }
+
+        .tabela-wrapper::-webkit-scrollbar-thumb {
+            background: #0033cc;
+            border-radius: 10px;
+        }
+
+        body.dark-mode .tabela-wrapper::-webkit-scrollbar-thumb {
+            background: #4a9eff;
+        }
+
+        /* Modal novidades (e futuros) */
+        .modal-novidades {
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .modal-novidades .modal-content {
+            padding: 0;
+            overflow: hidden;
+        }
 
         .novidades-header {
             background: linear-gradient(135deg, #0033cc 0%, #0066ff 100%);
@@ -400,10 +650,21 @@
             text-align: center;
         }
 
-        body.dark-mode .novidades-header { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); }
-        .novidades-header h3 { margin: 0; font-size: 24px; color: #fff; }
+        body.dark-mode .novidades-header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
 
-        .novidades-body { padding: 25px; max-height: 400px; overflow-y: auto; }
+        .novidades-header h3 {
+            margin: 0;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .novidades-body {
+            padding: 25px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
 
         .novidade-item {
             padding: 15px;
@@ -413,12 +674,31 @@
             border-left: 4px solid #0033cc;
         }
 
-        body.dark-mode .novidade-item { background: #2a2a2a; border-left-color: #4a9eff; }
+        body.dark-mode .novidade-item {
+            background: #2a2a2a;
+            border-left-color: #4a9eff;
+        }
 
-        .novidade-item h4 { margin: 0 0 8px 0; color: #0033cc; font-size: 16px; }
-        body.dark-mode .novidade-item h4 { color: #4a9eff; }
-        .novidade-item p { margin: 0; color: #666; font-size: 14px; line-height: 1.5; }
-        body.dark-mode .novidade-item p { color: #aaa; }
+        .novidade-item h4 {
+            margin: 0 0 8px 0;
+            color: #0033cc;
+            font-size: 16px;
+        }
+
+        body.dark-mode .novidade-item h4 {
+            color: #4a9eff;
+        }
+
+        .novidade-item p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        body.dark-mode .novidade-item p {
+            color: #aaa;
+        }
 
         .novidades-footer {
             padding: 20px 25px;
@@ -429,7 +709,10 @@
             align-items: center;
         }
 
-        body.dark-mode .novidades-footer { background: #2a2a2a; border-top-color: #444; }
+        body.dark-mode .novidades-footer {
+            background: #2a2a2a;
+            border-top-color: #444;
+        }
 
         .checkbox-novidades {
             display: flex;
@@ -439,19 +722,60 @@
             color: #666;
         }
 
-        body.dark-mode .checkbox-novidades { color: #aaa; }
-        .checkbox-novidades input[type="checkbox"] { width: auto; cursor: pointer; }
+        body.dark-mode .checkbox-novidades {
+            color: #aaa;
+        }
+
+        .checkbox-novidades input[type="checkbox"] {
+            width: auto;
+            cursor: pointer;
+        }
 
         @media(max-width:768px) {
-            .card { padding: 30px 20px; max-width: 100%; }
-            h2 { font-size: 24px; }
-            .header { flex-direction: column; gap: 15px; align-items: flex-start; margin-bottom: 30px; padding-bottom: 20px; }
-            .header button { width: 100%; }
-            .input-group { flex-direction: column; gap: 10px; }
-            .input-group button { width: 100%; }
-            table { font-size: 12px; margin-top: 30px; }
-            th, td { padding: 10px 8px; }
-            .grafico-container { padding: 20px; margin-bottom: 20px; }
+            .card {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+                margin-bottom: 30px;
+                padding-bottom: 20px;
+            }
+
+            .header button {
+                width: 100%;
+            }
+
+            .input-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .input-group button {
+                width: 100%;
+            }
+
+            table {
+                font-size: 12px;
+                margin-top: 30px;
+            }
+
+            th,
+            td {
+                padding: 10px 8px;
+            }
+
+            .grafico-container {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
@@ -462,46 +786,72 @@
     <div class="card">
         <div class="header">
             <h2>CONTROLE DE METAS</h2>
-            <div style="display:flex; gap:10px;">
-                <button type="button" onclick="abrirConfig()" style="background:#666;">⚙️ Config</button>
-                <button type="button" onclick="resetar()" style="background:#0a0a0a;">🗑️ Limpar Dados</button>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <!-- ✅ Futuras Atualizações (ícone de prancheta) -->
+                <button type="button" onclick="abrirFuturasAtualizacoes()" style="background:#0033cc;">
+                    <i class="fa-solid fa-clipboard-list"></i>Futuras Atualizações
+                </button>
+
+                <!-- ✅ Config (gear) -->
+                <button type="button" onclick="abrirConfig()" style="background:#666;">
+                    <i class="fa-solid fa-gear"></i>Config
+                </button>
+
+                <!-- (não foi especificado, então usei trash também) -->
+                <button type="button" onclick="resetar()" style="background:#0a0a0a;">
+                    <i class="fa-solid fa-trash"></i>Limpar Dados
+                </button>
             </div>
         </div>
 
-        <div class="section-title">📥 Adicionar Venda</div>
+        <div class="section-title">Adicionar Venda</div>
         <div class="input-group">
             <input type="date" id="data" aria-label="Data da venda">
-            <input type="number" id="valor" placeholder="Valor do dia" inputmode="decimal" min="0" step="0.01" aria-label="Valor da venda">
-            <input type="text" id="tag" placeholder="Tag (ex.: Loja, Online...)" list="tagsList" aria-label="Tag da venda">
+            <input type="number" id="valor" placeholder="Valor do dia" inputmode="decimal" min="0" step="0.01"
+                aria-label="Valor da venda">
+            <input type="text" id="tag" placeholder="Tag (ex.: Loja, Online...)" list="tagsList"
+                aria-label="Tag da venda">
             <datalist id="tagsList"></datalist>
             <button type="button" onclick="adicionar()">Adicionar</button>
         </div>
 
-        <div class="section-title">⚙️ Configurações</div>
+        <div class="section-title"><i class="fa-solid fa-gear"></i>Configurações</div>
         <div class="input-group">
-            <input type="number" id="meta" placeholder="Meta mensal" value="180000" inputmode="decimal" min="0" step="0.01" aria-label="Meta mensal">
-            <button type="button" onclick="atualizar()">Atualizar Meta</button>
+            <input type="number" id="meta" placeholder="Meta mensal" value="180000" inputmode="decimal" min="0"
+                step="0.01" aria-label="Meta mensal">
+            <!-- ✅ Atualizar (paper-plane) -->
+            <button type="button" onclick="atualizar()">
+                <i class="fa-solid fa-paper-plane"></i>Atualizar Meta
+            </button>
         </div>
 
         <div class="input-group">
             <input type="date" id="dataLimpeza" aria-label="Data para limpar mês">
-            <button type="button" onclick="limparMes()" style="background:#ffd600; color:#000;">Limpar Mês</button>
+            <button type="button" onclick="limparMes()" style="background:#ffd600; color:#000;">
+                <i class="fa-solid fa-trash"></i>Limpar Mês
+            </button>
         </div>
 
-        <div class="section-title">📊 Resumo Mensal</div>
+        <div class="section-title"><i class="fa-solid fa-chart-area"></i>Resumo Mensal</div>
         <div class="stats-container">
             <div class="stat-card total">
-                <span class="stat-card-icon">💰</span>
+                <!-- ✅ Total (money-bills) -->
+                <span class="stat-card-icon"><i class="fa-solid fa-money-bills"></i></span>
                 <p>Total do Mês</p>
                 <strong id="total">R$ 0,00</strong>
             </div>
+
             <div class="stat-card meta">
-                <span class="stat-card-icon">🎯</span>
+                <!-- ✅ Meta (bullseye) -->
+                <span class="stat-card-icon"><i class="fa-solid fa-bullseye"></i></span>
                 <p>Meta</p>
                 <strong id="metaValor">R$ 0,00</strong>
             </div>
+
             <div class="stat-card faltam">
-                <span class="stat-card-icon">📈</span>
+                <!-- ✅ Gráfico (chart-area) -->
+                <span class="stat-card-icon"><i class="fa-solid fa-chart-area"></i></span>
                 <p>Faltam</p>
                 <strong id="faltam">R$ 0,00</strong>
             </div>
@@ -509,25 +859,25 @@
 
         <div class="stats-extras">
             <div class="stat-card-extra">
-                <p>📊 Média Diária</p>
+                <p>Média Diária</p>
                 <strong id="mediaDiaria">R$ 0,00</strong>
             </div>
             <div class="stat-card-extra">
-                <p>📅 Dias Trabalhados</p>
+                <p>Dias Trabalhados</p>
                 <strong id="diasTrabalhados">0</strong>
             </div>
             <div class="stat-card-extra">
-                <p>⭐ Melhor Dia</p>
+                <p>Melhor Dia</p>
                 <strong id="melhorDia">-</strong>
             </div>
             <div class="stat-card-extra">
-                <p>📉 Menor Dia</p>
+                <p>Menor Dia</p>
                 <strong id="menorDia">-</strong>
             </div>
         </div>
 
         <div class="previsao-meta" id="previsaoMeta">
-            <h4>🎯 Previsão para Bater a Meta</h4>
+            <h4><i class="fa-solid fa-bullseye"> </i> Previsão para Bater a Meta</h4>
             <div class="previsao-item">
                 <span>Dias Restantes no Mês:</span>
                 <strong id="diasRestantes">0</strong>
@@ -539,7 +889,8 @@
         </div>
 
         <div class="progresso-container" style="margin-top:40px; margin-bottom:50px;">
-            <p class="progresso-texto" style="text-align:center; color:#666; font-weight:600; margin-bottom:10px;">Progresso</p>
+            <p class="progresso-texto" style="text-align:center; color:#666; font-weight:600; margin-bottom:10px;">
+                Progresso</p>
             <div class="bar-container">
                 <div class="bar" id="progresso" style="width:0%;" data-percentage="0%"></div>
             </div>
@@ -547,35 +898,31 @@
 
         <div class="content-wrapper">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
-                <p class="grafico-titulo" style="margin:0;">📈 Gráficos</p>
-                <button type="button" onclick="toggleGraficos()" id="btnToggleGraficos" style="background:#666; padding:8px 16px; font-size:12px;">👁️ Esconder</button>
+                <p class="grafico-titulo" style="margin:0;"><i class="fa-solid fa-chart-area"></i>Gráficos</p>
+
+                <!-- (não foi solicitado ícone para esse botão, então deixei só texto) -->
+                <button type="button" onclick="toggleGraficos()" id="btnToggleGraficos"
+                    style="background:#666; padding:8px 16px; font-size:12px;">
+                    Esconder
+                </button>
             </div>
 
             <div class="grafico-container" id="graficoContainer">
-                <p class="grafico-titulo">📈 Vendas do Mês</p>
+                <p class="grafico-titulo"><i class="fa-solid fa-chart-area"></i>Vendas do Mês</p>
                 <canvas id="grafico" height="150"></canvas>
 
-                <p class="grafico-titulo">📊 Comparação Últimos 30 Dias</p>
+                <p class="grafico-titulo"><i class="fa-solid fa-chart-area"></i>Comparação Últimos 30 Dias</p>
                 <canvas id="graficoComparativo" height="150"></canvas>
             </div>
         </div>
 
-        <div class="section-title">📋 Registros de Vendas</div>
+        <div class="section-title"><i class="fa-solid fa-clipboard-list"></i>Registros de Vendas</div>
         <div class="search-box">
             <!-- ✅ FIX: impedir email no campo de busca (autofill do Chrome) -->
-            <input
-                type="search"
-                id="busca"
-                name="busca_vendas_anti_autofill"
-                placeholder="🔍 Buscar por data, valor ou tag..."
-                onkeyup="filtrarTabela()"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
-                readonly
-                onfocus="this.removeAttribute('readonly');"
-            />
+            <input type="search" id="busca" name="busca_vendas_anti_autofill"
+                placeholder="Buscar por data, valor ou tag..." onkeyup="filtrarTabela()" autocomplete="off"
+                autocorrect="off" autocapitalize="off" spellcheck="false" readonly
+                onfocus="this.removeAttribute('readonly');" />
         </div>
 
         <div class="tabela-wrapper">
@@ -597,12 +944,13 @@
     <div id="modalEditar" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 style="margin:0; color:#0033cc;">✏️ Editar Venda</h3>
+                <h3 style="margin:0; color:#0033cc;">Editar Venda</h3>
                 <button class="close-modal" type="button" onclick="fecharModal()">&times;</button>
             </div>
             <div class="input-group" style="flex-direction:column; gap:15px;">
                 <input type="date" id="editarData" aria-label="Editar data">
-                <input type="number" id="editarValor" placeholder="Valor" inputmode="decimal" min="0" step="0.01" aria-label="Editar valor">
+                <input type="number" id="editarValor" placeholder="Valor" inputmode="decimal" min="0" step="0.01"
+                    aria-label="Editar valor">
                 <input type="text" id="editarTag" placeholder="Tag" list="tagsList" aria-label="Editar tag">
                 <div style="display:flex; gap:10px;">
                     <button type="button" onclick="salvarEdicao()" style="flex:1;">Salvar</button>
@@ -616,23 +964,27 @@
     <div id="modalNovidades" class="modal">
         <div class="modal-content modal-novidades">
             <div class="novidades-header">
-                <h3>🎉 Novidades!</h3>
+                <h3><i class="fa-solid fa-clipboard-list"></i>Novidades</h3>
                 <p style="margin:10px 0 0 0; opacity:.9;">Confira as últimas atualizações</p>
             </div>
+
             <div class="novidades-body">
                 <div class="novidade-item">
-                    <h4>🏷️ Tags nas Vendas</h4>
+                    <h4>Tags nas Vendas</h4>
                     <p>Agora cada venda pode ter uma tag/categoria (Loja, Online, etc.).</p>
                 </div>
+
                 <div class="novidade-item">
-                    <h4>📄 Relatório em PDF</h4>
+                    <h4><i class="fa-solid fa-file-pdf"></i>Relatório em PDF</h4>
                     <p>Gere um PDF com meta, total e gráficos do mês.</p>
                 </div>
+
                 <div class="novidade-item">
-                    <h4>🔐 Login e Sincronização</h4>
+                    <h4><i class="fa-solid fa-key"></i>Login e Sincronização</h4>
                     <p>Com Firebase, seus dados podem sincronizar entre celular e PC.</p>
                 </div>
             </div>
+
             <div class="novidades-footer">
                 <label class="checkbox-novidades">
                     <input type="checkbox" id="naoMostrarNovidades">
@@ -643,57 +995,144 @@
         </div>
     </div>
 
+    <!-- ✅ Modal Futuras Atualizações (checkbox removida) -->
+    <div id="modalFuturas" class="modal">
+        <div class="modal-content modal-novidades">
+            <div class="novidades-header">
+                <h3><i class="fa-solid fa-clipboard-list"></i>  Futuras Atualizações</h3>
+                <p style="margin:10px 0 0 0; opacity:.9;">
+                    O que vem por aí no Controle de Metas • Atual: <strong>v2.5.1</strong>
+                </p>
+            </div>
+
+            <div class="novidades-body">
+                <div class="novidade-item">
+                    <h4>v2.6.0 — Filtros avançados</h4>
+                    <p>Status: <strong>Planejando</strong> • Filtrar por mês, tag e intervalo de valores.</p>
+                </div>
+
+                <div class="novidade-item">
+                    <h4>v2.7.0 — Relatório por Tag</h4>
+                    <p>Status: <strong>Planejando</strong> • Total por categoria + gráfico de pizza.</p>
+                </div>
+
+                <div class="novidade-item">
+                    <h4>v2.8.0 — Metas por Tag</h4>
+                    <p>Status: <strong>Planejando</strong> • Definir meta separada para Loja/Online/etc.</p>
+                </div>
+
+                <div class="novidade-item">
+                    <h4>v2.9.0 — PDF completo com tabela</h4>
+                    <p>Status: <strong>Planejando</strong> • PDF com tabela de vendas + gráficos + resumo por tags.</p>
+                </div>
+
+                <div class="novidade-item">
+                    <h4>v3.0.0 — Backup mensal guiado</h4>
+                    <p>Status: <strong>Planejando</strong> • Fluxo guiado para exportar e organizar backups por mês.</p>
+                </div>
+            </div>
+
+            <div class="novidades-footer">
+                <div></div>
+                <button type="button" onclick="fecharFuturasAtualizacoes()" style="background:#0033cc;">Fechar</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal de Configurações -->
     <div id="modalConfig" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 style="margin:0; color:#0033cc;">⚙️ Configurações</h3>
+                <h3 style="margin:0; color:#0033cc;"><i class="fa-solid fa-gear"></i>Configurações</h3>
                 <button class="close-modal" type="button" onclick="fecharModalConfig()">&times;</button>
             </div>
 
             <div style="display:flex; flex-direction:column; gap:20px;">
                 <div>
-                    <h4 style="margin:0 0 15px 0; color:#0033cc;">🎨 Aparência</h4>
+                    <h4 style="margin:0 0 15px 0; color:#0033cc;">Aparência</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="toggleDarkMode(); fecharModalConfig();" id="btnDarkModeModal" style="background:#666; width:100%;">🌙 Modo Escuro</button>
-                        <button type="button" onclick="document.getElementById('bgImageInput').click()" style="background:#9c27b0; width:100%;">🖼️ Escolher Imagem de Fundo</button>
-                        <button type="button" onclick="removerImagemFundo(); fecharModalConfig();" style="background:#f44336; width:100%;">🗑️ Remover Imagem</button>
-                        <input type="file" id="bgImageInput" accept="image/*" style="display:none;" onchange="aplicarImagemFundo(event)">
+                        <!-- ✅ Lua / Sol -->
+                        <button type="button" onclick="toggleDarkMode(); fecharModalConfig();" id="btnDarkModeModal"
+                            style="background:#666; width:100%;">
+                            <i class="fa-solid fa-moon"></i>Modo Escuro
+                        </button>
+
+                        <!-- ✅ Botão de imagem -->
+                        <button type="button" onclick="document.getElementById('bgImageInput').click()"
+                            style="background:#9c27b0; width:100%;">
+                            <i class="fa-solid fa-image"></i>Escolher Imagem de Fundo
+                        </button>
+
+                        <!-- ✅ Remover imagem (trash) -->
+                        <button type="button" onclick="removerImagemFundo(); fecharModalConfig();"
+                            style="background:#f44336; width:100%;">
+                            <i class="fa-solid fa-trash"></i>Remover Imagem
+                        </button>
+
+                        <input type="file" id="bgImageInput" accept="image/*" style="display:none;"
+                            onchange="aplicarImagemFundo(event)">
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="margin:0 0 15px 0; color:#0033cc;">💾 Dados</h4>
+                    <h4 style="margin:0 0 15px 0; color:#0033cc;">Dados</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="exportarDados(); fecharModalConfig();" style="background:#28a745; width:100%;">💾 Exportar Dados</button>
-                        <button type="button" onclick="document.getElementById('importarInput').click()" style="background:#17a2b8; width:100%;">📥 Importar Dados</button>
-                        <input type="file" id="importarInput" accept=".json,.csv" style="display:none;" onchange="importarDados(event)">
+                        <!-- ✅ Exportar (upload) -->
+                        <button type="button" onclick="exportarDados(); fecharModalConfig();"
+                            style="background:#28a745; width:100%;">
+                            <i class="fa-solid fa-upload"></i>Exportar Dados
+                        </button>
+
+                        <!-- ✅ Importar (download) -->
+                        <button type="button" onclick="document.getElementById('importarInput').click()"
+                            style="background:#17a2b8; width:100%;">
+                            <i class="fa-solid fa-download"></i>Importar Dados
+                        </button>
+
+                        <input type="file" id="importarInput" accept=".json,.csv" style="display:none;"
+                            onchange="importarDados(event)">
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="margin:0 0 15px 0; color:#0033cc;">📊 Gráficos</h4>
+                    <h4 style="margin:0 0 15px 0; color:#0033cc;">Gráficos</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="exportarGrafico('grafico'); fecharModalConfig();" style="background:#e91e63; width:100%;">📈 Exportar Gráfico de Vendas (PNG)</button>
-                        <button type="button" onclick="exportarGrafico('graficoComparativo'); fecharModalConfig();" style="background:#9c27b0; width:100%;">📊 Exportar Gráfico Comparativo (PNG)</button>
+                        <button type="button" onclick="exportarGrafico('grafico'); fecharModalConfig();"
+                            style="background:#e91e63; width:100%;">
+                            <i class="fa-solid fa-chart-area"></i>Exportar Gráfico de Vendas (PNG)
+                        </button>
+                        <button type="button" onclick="exportarGrafico('graficoComparativo'); fecharModalConfig();"
+                            style="background:#9c27b0; width:100%;">
+                            <i class="fa-solid fa-chart-area"></i>Exportar Gráfico Comparativo (PNG)
+                        </button>
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="margin:0 0 15px 0; color:#0033cc;">📄 Relatórios</h4>
+                    <h4 style="margin:0 0 15px 0; color:#0033cc;">Relatórios</h4>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="gerarRelatorioPDF()" style="background:#ff6f00; width:100%;">📄 Gerar Relatório PDF</button>
+                        <!-- ✅ Baixar PDF (file-pdf) -->
+                        <button type="button" onclick="gerarRelatorioPDF()" style="background:#ff6f00; width:100%;">
+                            <i class="fa-solid fa-file-pdf"></i>Gerar Relatório PDF
+                        </button>
                     </div>
                 </div>
 
                 <div>
-                    <h4 style="margin:0 0 15px 0; color:#0033cc;">🔐 Login / Sincronização</h4>
+                    <h4 style="margin:0 0 15px 0; color:#0033cc;">Login / Sincronização</h4>
                     <div style="font-size:13px; opacity:.9; margin-bottom:10px;">
                         <div id="authStatus">Status: <strong>Deslogado</strong></div>
                     </div>
                     <div class="input-group" style="flex-direction:column; gap:10px;">
-                        <button type="button" onclick="abrirLoginModal()" style="background:#1565c0; width:100%;">🔐 Entrar / Cadastrar</button>
-                        <button type="button" onclick="logout()" style="background:#444; width:100%;">🚪 Sair</button>
+                        <!-- ✅ Cadeado (key) -->
+                        <button type="button" onclick="abrirLoginModal()" style="background:#1565c0; width:100%;">
+                            <i class="fa-solid fa-key"></i>Entrar / Cadastrar
+                        </button>
+
+                        <!-- ✅ Sair (door-closed) -->
+                        <button type="button" onclick="logout()" style="background:#444; width:100%;">
+                            <i class="fa-solid fa-door-closed"></i>Sair
+                        </button>
                     </div>
                 </div>
             </div>
@@ -704,14 +1143,22 @@
     <div id="modalLogin" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 style="margin:0; color:#0033cc;">🔐 Login</h3>
+                <h3 style="margin:0; color:#0033cc;"><i class="fa-solid fa-key"></i>Login</h3>
                 <button class="close-modal" type="button" onclick="fecharLoginModal()">&times;</button>
             </div>
             <div class="input-group" style="flex-direction:column; gap:12px;">
                 <input type="email" id="loginEmail" placeholder="Email" aria-label="Email" autocomplete="email">
-                <input type="password" id="loginSenha" placeholder="Senha (mín 6)" aria-label="Senha" autocomplete="current-password">
-                <button type="button" onclick="login()" style="width:100%;">Entrar</button>
-                <button type="button" onclick="registrar()" style="width:100%; background:#28a745;">Cadastrar</button>
+                <input type="password" id="loginSenha" placeholder="Senha (mín 6)" aria-label="Senha"
+                    autocomplete="current-password">
+
+                <button type="button" onclick="login()" style="width:100%;">
+                    <i class="fa-solid fa-key"></i>Entrar
+                </button>
+
+                <button type="button" onclick="registrar()" style="width:100%; background:#28a745;">
+                    <i class="fa-solid fa-key"></i>Cadastrar
+                </button>
+
                 <p style="font-size:12px; opacity:.85; line-height:1.4;">
                     * Para sincronização funcionar, configure o Firebase no código (firebaseConfig).
                 </p>
@@ -749,8 +1196,6 @@
             const el = document.getElementById("busca");
             if (!el) return;
             const v = String(el.value || "").trim();
-
-            // se o chrome enfiar email aqui, a gente zera
             if (v.includes("@") && v.includes(".")) {
                 el.value = "";
                 el.setAttribute("value", "");
@@ -758,13 +1203,30 @@
         }
 
         function antiAutofillBusca() {
-            // tenta por ~2s (o autofill às vezes acontece depois do load)
             let tries = 0;
             const t = setInterval(() => {
                 limparBuscaSePareceEmail();
                 tries++;
                 if (tries >= 20) clearInterval(t);
             }, 100);
+        }
+
+        /********************
+         * ✅ Futuras Atualizações
+         ********************/
+        function abrirFuturasAtualizacoes() { document.getElementById("modalFuturas").style.display = "flex"; }
+        function fecharFuturasAtualizacoes() { document.getElementById("modalFuturas").style.display = "none"; }
+
+        /********************
+         * ✅ Dark mode button (Lua / Sol)
+         ********************/
+        function atualizarBotaoDarkMode() {
+            const btn = document.getElementById("btnDarkModeModal");
+            if (!btn) return;
+            const isDark = document.body.classList.contains("dark-mode");
+            btn.innerHTML = isDark
+                ? `<i class="fa-solid fa-sun"></i>Modo Claro`
+                : `<i class="fa-solid fa-moon"></i>Modo Escuro`;
         }
 
         /********************
@@ -840,7 +1302,6 @@
                     currentUser = user || null;
                     atualizarAuthUI();
 
-                    // ✅ FIX: garantir que busca não fique com email após login
                     setTimeout(() => {
                         limparBuscaSePareceEmail();
                         antiAutofillBusca();
@@ -848,7 +1309,6 @@
 
                     if (currentUser) {
                         await carregarDoCloud();
-                        // ✅ FIX: de novo após sync (autofill pode ocorrer depois)
                         setTimeout(() => {
                             limparBuscaSePareceEmail();
                             antiAutofillBusca();
@@ -944,7 +1404,6 @@
                 applyingRemote = false;
                 showToast("Dados sincronizados da nuvem!", "success");
 
-                // ✅ FIX: mais uma garantia
                 limparBuscaSePareceEmail();
             } catch (e) {
                 applyingRemote = false;
@@ -1203,7 +1662,6 @@
             calcularEstatisticas(vendasMes);
             calcularPrevisaoMeta(totalMes);
 
-            // ✅ FIX: se o chrome “colar” email na busca durante re-render, limpa
             limparBuscaSePareceEmail();
         }
 
@@ -1515,10 +1973,10 @@
             graficosVisiveis = !graficosVisiveis;
             if (graficosVisiveis) {
                 container.classList.remove("escondido");
-                btn.innerText = "👁️ Esconder";
+                btn.innerHTML = "Esconder";
             } else {
                 container.classList.add("escondido");
-                btn.innerText = "👁️ Mostrar";
+                btn.innerHTML = "Mostrar";
             }
             localStorage.setItem("graficosVisiveis", String(graficosVisiveis));
             salvarNoCloud();
@@ -1567,8 +2025,7 @@
 
         function abrirConfig() {
             document.getElementById("modalConfig").style.display = "flex";
-            const isDark = document.body.classList.contains("dark-mode");
-            document.getElementById("btnDarkModeModal").innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+            atualizarBotaoDarkMode();
             atualizarAuthUI();
         }
         function fecharModalConfig() { document.getElementById("modalConfig").style.display = "none"; }
@@ -1577,8 +2034,7 @@
             document.body.classList.toggle("dark-mode");
             const isDark = document.body.classList.contains("dark-mode");
             localStorage.setItem("darkMode", String(isDark));
-            const btnModal = document.getElementById("btnDarkModeModal");
-            if (btnModal) btnModal.innerText = isDark ? "☀️ Modo Claro" : "🌙 Modo Escuro";
+            atualizarBotaoDarkMode();
             salvarNoCloud();
         }
 
@@ -1656,17 +2112,19 @@
             const modalConfig = document.getElementById("modalConfig");
             const modalNovidades = document.getElementById("modalNovidades");
             const modalLogin = document.getElementById("modalLogin");
+            const modalFuturas = document.getElementById("modalFuturas");
 
             if (event.target === modalEditar) fecharModal();
             if (event.target === modalConfig) fecharModalConfig();
             if (event.target === modalNovidades) fecharNovidades();
             if (event.target === modalLogin) fecharLoginModal();
+            if (event.target === modalFuturas) fecharFuturasAtualizacoes();
         };
 
         // Gráficos
         if (!graficosVisiveis) {
             document.getElementById("graficoContainer").classList.add("escondido");
-            document.getElementById("btnToggleGraficos").innerText = "👁️ Mostrar";
+            document.getElementById("btnToggleGraficos").innerHTML = "Mostrar";
         }
 
         // Tema
@@ -1697,12 +2155,15 @@
         window.addEventListener("load", () => {
             limparBuscaSePareceEmail();
             antiAutofillBusca();
+            atualizarBotaoDarkMode();
         });
         document.addEventListener("DOMContentLoaded", () => {
             limparBuscaSePareceEmail();
             antiAutofillBusca();
+            atualizarBotaoDarkMode();
         });
     </script>
 
 </body>
+
 </html>
